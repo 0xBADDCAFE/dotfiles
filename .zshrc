@@ -90,6 +90,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
 alias vi='vim'
+alias macvim='/usr/local/Cellar/macvim-kaoriya/HEAD/MacVim.app/Contents/MacOS/Vim -g --remote-tab-silent'
 
 setopt nobeep
 
