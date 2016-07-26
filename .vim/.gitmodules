@@ -1,3 +1,0 @@
-[submodule "bundle/vim-hariti"]
-	path = bundle/vim-hariti
-	url = git@github.com:kamichidu/vim-hariti
