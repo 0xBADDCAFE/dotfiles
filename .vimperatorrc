@@ -1,0 +1,70 @@
+"3.9 (created: 2015/02/15 15:49:05)
+
+nnoremap <silent> ,r :mapc<CR>:cmapc<CR>:imapc<CR>:so ~/.vimperatorrc<CR>:echo 'settings are reloaded'<CR>
+noremap j 3j
+noremap k 3k
+" noremap <C-h> <C-p>
+" noremap <C-l> <C-n>
+nnoremap ,b ojavascript:
+nnoremap d :<C-u>bd -select lastactive<CR>
+" multibyte encode yank (firefox 40~ doesn't work)
+" nnoremap y :js<Space>util.copyToClipboard(buffer.URL)<CR>:echom 'URL yanked'<CR>
+noremap <silent> y :copy url<CR>
+vnoremap <C-c> Y
+nnoremap <silent> <C-y> :copy titleAndURL<CR>q
+" vnoremap y y<ESC><ESC>
+" vnoremap <silent> t y<Esc><Esc>P
+" vnoremap <silent> o y<Esc><Esc>p
+inoremap <silent> <C-6> <Esc><C-6>
+cnoremap <silent> <Down> <Tab>
+cnoremap <silent> <Up> <S-Tab>
+cnoremap <silent> <C-f> <Right>
+cnoremap <silent> <C-b> <Left>
+cnoremap <silent> <C-g> <ESC>
+cnoremap <silent> <C-j> <NOP>
+autocmd VimperatorEnter .* :set complete+=H
+set complete=sl
+set hintchars=";asdfghjkl"
+set wildmode=list:full
+set editor='/usr/local/bin/vim'
+" 起動時にナビゲーションページを表示しない
+set gui=nonavigation
+set newtab=all
+" set focuscontent
+set! browser.urlbar.filter.javascript=false
+set! browser.urlbar.maxRichResults=32
+set ignorecase
+" let g:asdfghjkl_default="true"
+" let g:zipDownloadDir="~/Downloads"
+
+style! -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+style! -name treestyletab chrome://* .tabbrowser-tab { z-index: 0 !important; }
+style! -name nofindbar chrome://* findbar { display: none; }
+
+"hatena bo
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
+
+" copy.js
+javascript <<EOM
+  liberator.globalVariables.copy_templates = [
+    // defaults
+    { label: 'titleAndURL',    value: '%TITLE%\n%URL%' },
+    { label: 'title',          value: '%TITLE%' },
+    { label: 'anchor',         value: '<a href="%URL%">%TITLE%</a>' },
+    { label: 'selanchor',      value: '<a href="%URL%" title="%TITLE%">%SEL%</a>' },
+    { label: 'htmlblockquote', value: '<blockquote cite="%URL%" title="%TITLE%">%HTMLSEL%</blockquote>' },
+    // added
+    { label: 'url', value: '%URL%' },
+  ];
+EOM
+
+"◇ feedSomeKeys_3.js
+" ======================================================================
+" command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+" lazy fmaps -u='twitter.com' -e=vkeydown n r m b u l ?,<S-/> j k <Space> / . gh gc ga gr gd gp gf gl gm gs gu 
+" t f
+" lazy fmaps -u='twitter.com' -e=keydown <ESC>
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vim:

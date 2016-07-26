@@ -1,0 +1,162 @@
+" plugin_setting_template {{{
+" let g:variable = 0
+" }}}
+
+" standard plugins {{{
+if !exists('loaded_matchit')
+  " enable matchit
+  runtime macros/matchit.vim
+endif
+" }}}
+" ctrlp{{{
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
+" The maximum number of files to scan, set to 0 for no limit: >
+" let g:ctrlp_max_files = 1000
+" Set this to 0 to show the match window at the top of the screen: >
+let g:ctrlp_match_window_bottom = 1
+" Change the listing order of the files in the match window. The default setting
+" (1) is from bottom to top: >
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 16
+let g:ctrlp_max_files = 3000
+let g:ctrlp_clear_cache_on_exit = 0
+" has migemo?
+if executable('CMigemo')
+  let g:ctrlp_use_migemo = 1
+endif
+" let g:ctrlp_extensions = ['mixed']
+let g:ctrlp_prompt_mappings = {
+      \ 'PrtSelectMove("j")':   ['<C-j>', '<tab>', '<down>'],
+      \ 'PrtSelectMove("k")':   ['<C-k>', '<s-tab>', '<up>'],
+      \ 'ToggleFocus()':        ['<NOP>'],
+      \ 'PrtExpandDir()':       ['<NOP>'],
+      \ }
+
+" funky{{{
+nnoremap <F11> :CtrlPFunky<CR>
+let g:ctrlp_funky_syntax_highlight = 1
+" }}}
+
+" }}}
+" restart {{{
+" if enable restart session, leave session files in
+" current dir...
+" let g:restart_sessionoptions=&sessionoptions
+let g:restart_sessionoptions="winsize,winpos"
+" }}}
+" airline {{{
+let g:airline_detect_iminsert=1
+if &encoding ==# 'utf-8'
+  let g:airline_powerline_fonts=1
+endif
+let g:airline_section_z='%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3v '
+let g:airline#extensions#default#section_truncate_width = {}
+
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#checks = []
+" }}}
+" indent-guide {{{
+" if has('gui_running')
+"   let g:indent_guides_enable_on_vim_startup = 1
+"   " let g:indent_guides_guide_size = 1
+"   " let g:indent_guides_color_change_percent = 2
+"   let g:indent_guides_start_level = 2
+"   let g:indent_guides_auto_colors = 0
+"   augroup IndGuCol
+"     au!
+"     au VimEnter,colorscheme * highlight def link IndentGuidesOdd Normal
+"     "solarized base02
+"     au VimEnter,colorscheme * highlight def link IndentGuidesEven FoldColumn
+"   augroup END
+" endif
+" }}}
+" ag.vim {{{
+" Don't allow ag.vim to mapping keys in quickfix(if
+" rking/ag.vim use).
+" let g:ag_apply_qmappings = 0
+" let g:ag_apply_lmappings = 0
+" }}}
+" memolist.vim {{{
+" In below sentence, <F5> is ineffective.
+" nnoremap m, :exe "CtrlP" g:memolist_path<CR><F5>
+" NOTE: To overwrite, define after loading plugins.
+" Experimental: It seems working correctly.
+" Reference: :exe
+augroup vimrc_loading
+  autocmd VimEnter * command! MemoList exe "CtrlP" g:memolist_path | CtrlPClearCache
+augroup END
+nnoremap m, :MemoList<CR>
+" }}}
+" vim-quickrun {{{
+let g:quickrun_config = {}
+" let g:quickrun_config._ = {
+"       \ 'runner' : 'vimproc',
+"       \ 'outputter/buffer/split' : 'botright 10sp',
+"       \ 'runmode' : 'async:vimproc'
+"       \ }
+
+" TODO: install openbrowser.vim
+" let g:quickrun_config.markdown = {
+"       \ 'type'      : 'markdown/pandoc',
+"       \ 'outputter' : 'browser',
+"       \ 'cmdopt'    : '-s'
+"       \ }
+" remap exec commands
+map <Leader>rr <Plug>(quickrun)
+nnoremap <Leader>ri :<C-u>QuickRun -mode n -input input<CR>
+" }}}
+" columnjump {{{
+nmap <c-k> <Plug>(columnjump-backward)
+nmap <c-j> <Plug>(columnjump-forward)
+" }}}
+" plugin_setting_template {{{
+let g:phpcomplete_index_composer_command='composer'
+" }}}
+
+" For hariti work {{{
+if has('vim_starting')
+    let g:hariti_config={}
+    let g:hariti_config.source_filename=expand('$HOME') . "/.vim/bundle/bundles"
+    let g:hariti_config.bundle_directory=expand('$HOME') . "/.vim/bundle/"
+    set runtimepath+=$HOME/.vim/bundle/vim-hariti/
+    runtime plugin/hariti.vim
+endif
+
+" Apply plug-ins to your &runtimepath
+HaritiSetup
+" }}}
+
+" settings require loading plugins
+" TODO: If singleton, don't load other scripts.{{{
+if has('clientserver') && !has('gui_macvim')
+  call singleton#enable()
+endif
+" }}}
+" colorschemes{{{
+" TODO: separate settings by g:colors_name value.
+autocmd vimrc_loading VimEnter,ColorScheme * highlight CursorLine NONE
+if has('gui_running')
+  " solarized{{{
+  " augroup solarizedAddHi
+  "   autocmd!
+  "   autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE
+  "   autocmd ColorScheme * highlight NonText guifg=#073642 guibg=NONE
+  " augroup END
+  " TODO: check the value's effect
+  " let g:solarized_termtrans = 1
+  let g:solarized_italic=0
+  " let g:airline_theme='solarized_rev'
+  " colorscheme solarized
+  " }}}
+  let g:airline_theme='ubaryd'
+  colorscheme ubaryd
+  " FIXME:this setting is temporary.
+  hi Todo guifg=#141413 guibg=#C7B386
+else
+  let g:airline_theme='light'
+  " au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
+  colorscheme midnight
+endif
+" }}}
+
+" vim: ft=vim:et:sw=2:sts=2:fdm=marker :

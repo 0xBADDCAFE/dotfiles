@@ -1,0 +1,6 @@
+bundle/*
+!bundle/bundles
+!bundle/vim-hariti/
+.netrwhist
+*.sw?
+*~

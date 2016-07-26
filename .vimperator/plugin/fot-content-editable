@@ -1,0 +1,8 @@
+  plugins.libly.$U.around(
+    editor,
+    'expandAbbreviation',
+    function (next) {
+        let textbox   = Editor.getEditor();
+        return textbox && textbox.value && next();
+    }
+  );
