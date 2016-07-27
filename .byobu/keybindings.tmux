@@ -24,12 +24,13 @@ bind | display-panes \; split-window -v -c "#{pane_current_path}"
 # bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
  
 # Update default binding of `Enter` to also use copy-pipe
-unbind -t vi-copy Enter
+if-shell 'test "$(uname -s)" = Darwin' 'unbind -t vi-copy Enter'
 # bind -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-bind -t vi-copy Enter copy-pipe "pbcopy"
+if-shell 'test "$(uname -s)" = Darwin' 'bind -t vi-copy Enter copy-pipe "pbcopy"'
 
 ### https://github.com/tmux/tmux/issues/145 ###
 # Start copy mode when scrolling up and exit when scrolling down to bottom.
 # The "#{mouse_any_flag}" check just sends scrolls to any program running that
 # has mouse support (like vim).
-bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'"
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M

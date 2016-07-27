@@ -1,1 +1,3 @@
-[ -r /usr/local/share/byobu/profiles/bashrc ] && . /usr/local/share/byobu/profiles/bashrc  #byobu-prompt#
+if-shell 'test "$(uname -s)" = Darwin' \
+    '[ -r /usr/local/share/byobu/profiles/bashrc ] && . /usr/local/share/byobu/profiles/bashrc  #byobu-prompt#' \
+    '[ -r /usr/share/byobu/profiles/bashrc ] && . /usr/share/byobu/profiles/bashrc  #byobu-prompt#'
