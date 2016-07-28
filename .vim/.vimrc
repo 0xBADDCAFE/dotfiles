@@ -272,6 +272,14 @@ if exists('+transparency')
     endif
   augroup END
 endif
+
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \   if &omnifunc == "" |
+        \       setlocal omnifunc=syntaxcomplete#Complete |
+        \   endif
+endif
+
 " }}}
 
 
