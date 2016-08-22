@@ -10,7 +10,7 @@ scriptencoding utf-8
 " An example for a Japanese version vimrc file.
 " 日本語版のデフォルト設定ファイル(vimrc) - Vim7用試作
 "
-" Last Change: 17-Jul-2013.
+" Last Change: 11-Aug-2016.
 " Maintainer:  MURAOKA Taro <koron.kaoriya@gmail.com>
 "
 " 解説:
@@ -69,7 +69,11 @@ if !(has('win32') || has('mac')) && has('multi_lang')
 endif
 " MacOS Xメニューの日本語化 (メニュー表示前に行なう必要がある)
 if has('mac')
-  set langmenu=japanese
+  set encoding=utf-8
+  set ambiwidth=double
+  if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
+    set langmenu=ja_ja.utf-8.macvim
+  endif
 endif
 " 日本語入力用のkeymapの設定例 (コメントアウト)
 if has('keymap')
@@ -126,7 +130,7 @@ if !exists(":DiffOrig")
 endif
 "---------------------------------------------------------------------------
 " コンソールでのカラー表示のための設定(暫定的にUNIX専用)
-if has('unix') && !has('gui_running')
+if has('unix') && !has('gui_running') && !has('gui_macvim')
   let s:uname = system('uname')
   if s:uname =~? "linux"
     set term=builtin_linux
@@ -138,6 +142,20 @@ if has('unix') && !has('gui_running')
     set term=builtin_xterm
   endif
   unlet s:uname
+endif
+
+"---------------------------------------------------------------------------
+" コンソール版で環境変数$DISPLAYが設定されていると起動が遅くなる件へ対応
+if !has('gui_running') && has('xterm_clipboard')
+  set clipboard=exclude:cons\\\|linux\\\|cygwin\\\|rxvt\\\|screen
+endif
+
+"---------------------------------------------------------------------------
+" プラットホーム依存の特別な設定
+
+if has('mac')
+  " Macではデフォルトの'iskeyword'がcp932に対応しきれていないので修正
+  set iskeyword=@,48-57,_,128-167,224-235
 endif
 
 "---------------------------------------------------------------------------
@@ -156,4 +174,26 @@ if kaoriya#switch#enabled('disable-vimproc')
   let &rtp = join(filter(split(&rtp, ','), 'v:val !~ "[/\\\\]plugins[/\\\\]vimproc$"'), ',')
 endif
 
-" Copyright (C) 2009-2013 KaoriYa/MURAOKA Taro
+" go-extra: 同梱の vim-go-extra を無効化する
+if kaoriya#switch#enabled('disable-go-extra')
+  let &rtp = join(filter(split(&rtp, ','), 'v:val !~ "[/\\\\]plugins[/\\\\]golang$"'), ',')
+endif
+
+" Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
+
+
+"---------------------------------------------------------------------------
+" MacVim-KaoriYa固有の設定
+
+" migemo:
+let $PATH = simplify($VIM . '/../../MacOS') . ':' . $PATH
+set migemodict=$VIMRUNTIME/dict/migemo-dict
+set migemo
+
+" 印刷に関する設定:
+set printmbfont=r:HiraMinProN-W3,b:HiraMinProN-W6
+set printencoding=utf-8
+set printmbcharset=UniJIS
+
+" Lua interface with embedded luajit
+exec "set luadll=".simplify(expand("$VIM/../../Frameworks/libluajit-5.1.2.dylib"))

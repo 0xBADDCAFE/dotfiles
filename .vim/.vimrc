@@ -181,7 +181,7 @@ endif
 " bind maps
 noremap Q gq
 noremap <F1> <C-w>g}
-noremap! <F1> <C-w>g}
+noremap! <F1> <C-o><C-w>g}
 noremap <silent> j gj
 noremap <silent> k gk
 noremap <silent> gj j
