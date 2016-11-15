@@ -1,1 +1,9 @@
+# ../.zprezto/runcoms/zprofile
 source ${0:a:h}/../.zprezto/runcoms/zprofile
+
+#
+# Editors
+#
+
+export EDITOR='vim'
+export VISUAL='vim'
