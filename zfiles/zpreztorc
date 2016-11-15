@@ -1,1 +1,66 @@
+# ../.zprezto/runcoms/zpreztorc
 source ${0:a:h}/../.zprezto/runcoms/zpreztorc
+
+#
+# General
+#
+
+# Set the Zsh modules to load (man zshmodules).
+zstyle ':prezto:load' zmodule 'attr' 'stat'
+
+#
+# Autosuggestions
+#
+
+# Set the query found color.
+# zstyle ':prezto:module:autosuggestions:color' found ''
+
+#
+# History Substring Search
+#
+
+# Set the query found color.
+# zstyle ':prezto:module:history-substring-search:color' found ''
+
+# Set the query not found color.
+# zstyle ':prezto:module:history-substring-search:color' not-found ''
+
+# Set the search globbing flags.
+# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+
+#
+# Prompt
+#
+
+# Set the prompt theme to load.
+# Setting it to 'random' loads a random theme.
+# Auto set to 'off' on dumb terminals.
+zstyle ':prezto:module:prompt' theme 'pure'
+
+#
+# Syntax Highlighting
+#
+
+# Set syntax highlighters.
+# By default, only the main highlighter is enabled.
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'line' \
+  'cursor' \
+  'root'
+
+# Set syntax highlighting styles.
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'builtin' 'bg=blue' \
+  'command' 'bg=blue' \
+  'function' 'bg=blue'
+
+#
+# Tmux
+#
+
+# Integrate with iTerm2.
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
