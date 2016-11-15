@@ -1,0 +1,7 @@
+# ../.zprezto/runcoms/zshrc
+source ${0:a:h}/../.zprezto/runcoms/zshrc
+
+
+# Load rbenv automatically by appending
+# the following to your profile:
+eval "$(rbenv init -)"

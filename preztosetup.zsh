@@ -1,5 +1,11 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-	cp "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+
+SRCDIR=${0:a:h}
+
+ln -s ${SRCDIR}/.zprezto ${ZDOTDIR:-$HOME}/.zprezto
+for rcfile in "${SRCDIR}"/zfiles/z*(.N); do
+  <<RCFILE > "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+source ${rcfile}
+RCFILE
 done
