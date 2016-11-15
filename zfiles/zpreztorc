@@ -8,6 +8,20 @@ source ${0:a:h}/../.zprezto/runcoms/zpreztorc
 # Set the Zsh modules to load (man zshmodules).
 zstyle ':prezto:load' zmodule 'attr' 'stat'
 
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'autosuggestions' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'prompt'
+
 #
 # Autosuggestions
 #
