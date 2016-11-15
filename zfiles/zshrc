@@ -1,6 +1,8 @@
 # ../.zprezto/runcoms/zshrc
 source ${0:a:h}/../.zprezto/runcoms/zshrc
 
+stty -ixon
+
 # TODO: Check autosuggestions module: autosuggestions/README.md
 # autoload history-search-end
 # zle -N history-beginning-search-backward-end history-search-end
