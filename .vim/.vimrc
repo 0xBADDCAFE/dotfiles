@@ -232,13 +232,6 @@ augroup vimrc_loading
   autocmd CmdWinLeave * setlocal backspace+=eol
 augroup END
 
-augroup vimrc_loading
-  autocmd FileType qf nnoremap <buffer> p <CR>zz<C-W>p
-  autocmd FileType qf nnoremap <buffer> <S-CR> <CR>
-  autocmd FileType qf nnoremap <buffer> j j
-  autocmd FileType qf nnoremap <buffer> k k
-augroup END
-
 " Experimental: smart lcd
 if has('win32') && has('gui_running')
   cd $HOME
