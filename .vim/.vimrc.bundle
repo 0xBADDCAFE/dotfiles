@@ -107,7 +107,7 @@ nnoremap <Leader>ri :<C-u>QuickRun -mode n -input input<CR>
 nmap <c-k> <Plug>(columnjump-backward)
 nmap <c-j> <Plug>(columnjump-forward)
 " }}}
-" plugin_setting_template {{{
+" phpcomplete {{{
 let g:phpcomplete_index_composer_command='composer'
 " }}}
 

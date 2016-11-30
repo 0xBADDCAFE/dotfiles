@@ -22,7 +22,7 @@ use tyru/caw.vim
 use vim-airline/vim-airline
 use vim-airline/vim-airline-themes
 use tpope/vim-fugitive
-use tpope/vim-sleuth
+# use tpope/vim-sleuth
 use osyo-manga/vim-monster
 use whatyouhide/vim-gotham
 use jonathanfilip/vim-lucius
@@ -53,6 +53,5 @@ use jwalton512/vim-blade
 use udalov/kotlin-vim
 # use m2mdas/phpcomplete-extended
 # use m2mdas/phpcomplete-extended-laravel
-# use comeonly/php.vim-html-enhanced
 # use epmatsw/ag.vim
 # use nathanaelkane/vim-indent-guides
