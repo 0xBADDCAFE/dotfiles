@@ -125,8 +125,8 @@ set viminfo& viminfo+=n~/.viminfo
 if executable('jvgrep')
   set grepprg=jvgrep\ -irR\ --color=never
 elseif executable('ag')
-  set grepprg=ag\ -iSU\ --vimgrep\ $*
-  set grepformat=%f:%l:%c:%m
+  set grepprg=ag\ --nogroup
+  set grepformat=%f:%l:%m
 endif
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
