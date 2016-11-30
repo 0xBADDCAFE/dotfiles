@@ -148,14 +148,16 @@ if has('gui_running')
   " augroup END
   " TODO: check the value's effect
   " let g:solarized_termtrans = 1
-  let g:solarized_italic=0
+  " let g:solarized_italic=0
   " let g:airline_theme='solarized_rev'
   " colorscheme solarized
   " }}}
-  let g:airline_theme='ubaryd'
-  colorscheme ubaryd
+  " ubaryd {{{
+  " colorscheme ubaryd
   " FIXME:this setting is temporary.
-  hi Todo guifg=#141413 guibg=#C7B386
+  " hi Todo guifg=#141413 guibg=#C7B386
+  " }}}
+  colorscheme lucius
 else
   autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal ctermbg=NONE
   autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE
