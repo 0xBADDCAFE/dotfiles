@@ -34,6 +34,7 @@ use cocopon/iceberg.vim
 use Donearm/Ubaryd
 use 0xBADDCAFE/midnight.vim
 use 0xBADDCAFE/vim-markdown
+use dhruvasagar/vim-table-mode
 use glidenote/memolist.vim
 use kannokanno/previm
 use thinca/vim-quickrun

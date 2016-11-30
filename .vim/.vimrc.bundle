@@ -113,6 +113,9 @@ let g:phpcomplete_index_composer_command='composer'
 " dirvish {{{
 autocmd FileType dirvish keeppatterns g@\v/\.[^\/]+/?$@d
 " }}}
+" table mode {{{
+let g:table_mode_corner="|"
+" }}}
 
 " For hariti work {{{
 if has('vim_starting')
