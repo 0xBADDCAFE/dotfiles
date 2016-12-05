@@ -9,6 +9,7 @@ use osyo-manga/vim-vigemo
 use mattn/webapi-vim
 use mattn/habatobi-vim
 use mattn/sonictemplate-vim
+use mattn/vdbi-vim
 # use lambdalisue/vim-gista
 # use cohama/lexima.vim
 use ctrlpvim/ctrlp.vim
