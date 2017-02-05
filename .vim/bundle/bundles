@@ -4,13 +4,10 @@ use Shougo/vimproc
 use thinca/vim-singleton
   enable_if "has('clientserver')"
 use osyo-manga/vim-hopping
-use osyo-manga/vim-vigemo
-# use osyo-manga/vim-trip
 use mattn/webapi-vim
 use mattn/habatobi-vim
 use mattn/sonictemplate-vim
 use mattn/vdbi-vim
-# use lambdalisue/vim-gista
 # use cohama/lexima.vim
 use ctrlpvim/ctrlp.vim
 use tacahiroy/ctrlp-funky
@@ -18,20 +15,16 @@ use koron/nyancat-vim
 use koron/codic-vim
 use kana/vim-textobj-user
 use kana/vim-tabpagecd
+use kana/vim-better-tag-jump
 use tyru/restart.vim
 use tyru/caw.vim
 use vim-airline/vim-airline
 use vim-airline/vim-airline-themes
 use tpope/vim-fugitive
-# use tpope/vim-sleuth
 use osyo-manga/vim-monster
 use whatyouhide/vim-gotham
 use jonathanfilip/vim-lucius
-# use altercation/vim-colors-solarized
-# use chriskempson/base16-vim
-# use vim-scripts/summerfruit256.vim
 use w0ng/vim-hybrid
-use cocopon/iceberg.vim
 use Donearm/Ubaryd
 use 0xBADDCAFE/midnight.vim
 use 0xBADDCAFE/vim-markdown
