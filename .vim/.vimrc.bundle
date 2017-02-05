@@ -163,14 +163,14 @@ else
   autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE
   autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel ctermbg=NONE
 
-  colorscheme gotham256
-  let g:airline_theme='gotham256'
-  " au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
-
   autocmd vimrc_loading VimEnter * highlight Tabline ctermbg=24
   autocmd vimrc_loading VimEnter * highlight TablineFill ctermbg=24
   autocmd vimrc_loading ColorScheme gotham256 highlight Tabline ctermbg=24
   autocmd vimrc_loading ColorScheme gotham256 highlight TablineFill ctermbg=24
+
+  colorscheme gotham256
+  " let g:airline_theme='gotham256'
+  " au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
 endif
 " }}}
 
