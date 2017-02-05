@@ -110,6 +110,9 @@ nmap <c-j> <Plug>(columnjump-forward)
 " phpcomplete {{{
 let g:phpcomplete_index_composer_command='composer'
 " }}}
+" autoprogramming {{{
+set completefunc=autoprogramming#complete
+" }}}
 " dirvish {{{
 autocmd FileType dirvish keeppatterns g@\v/\.[^\/]+/?$@d
 " }}}
