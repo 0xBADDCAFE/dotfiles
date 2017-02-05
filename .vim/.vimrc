@@ -124,6 +124,9 @@ set backupdir=~/.vim/bkfiles
 set viminfo& viminfo+=n~/.viminfo
 if executable('jvgrep')
   set grepprg=jvgrep\ -irR\ --color=never
+elseif executable('rg')
+  set grepprg=rg\ -nS\ --no-heading
+  set grepformat=%f:%l:%m
 elseif executable('ag')
   set grepprg=ag\ --nogroup
   set grepformat=%f:%l:%m
