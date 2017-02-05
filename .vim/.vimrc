@@ -210,7 +210,7 @@ nnoremap <silent> ,et :<C-u>tabe ~/.vim/.vimrc<CR>
 nnoremap <silent> ,r :<C-u>source $MYVIMRC<CR>
 nnoremap <silent> <F3> :let &ts=(&ts*2 > 16 ? 2 : &ts*2)<cr>:echo "tabstop: " . &ts<cr>
 nnoremap B :ls<CR>:b
-nnoremap : q:i
+" nnoremap : q:i
 " It doesn't work incsearch.
 "   nnoremap / q/i
 
@@ -223,8 +223,8 @@ nnoremap : q:i
 
 " autocmds{{{
 augroup vimrc_loading
-  autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
-  autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
+  " autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
+  " autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
   autocmd CmdWinEnter * inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
   autocmd CmdWinEnter * inoremap <buffer><silent> <C-r><C-w> <C-c><C-r><C-w><C-f>i
   " autocmd CmdWinEnter * inoremap <buffer><silent> <C-r><C-w> <C-r>=matchstr(@/,'\\<\zs.*\ze\\>')<cr>
