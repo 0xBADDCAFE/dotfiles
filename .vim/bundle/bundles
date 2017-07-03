@@ -10,6 +10,7 @@ use mattn/sonictemplate-vim
 use mattn/emmet-vim
 use mattn/vdbi-vim
 # use cohama/lexima.vim
+use mattn/vim-prompter
 use ctrlpvim/ctrlp.vim
 use tacahiroy/ctrlp-funky
 use koron/nyancat-vim
