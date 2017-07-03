@@ -24,9 +24,9 @@ bind | display-panes \; split-window -v -c "#{pane_current_path}"
 # bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
  
 # Update default binding of `Enter` to also use copy-pipe
-if-shell 'test "$(uname -s)" = Darwin' 'unbind -t vi-copy Enter'
+if-shell 'test "$(uname -s)" = Darwin' 'unbind -T copy-mode-vi Enter'
 # bind -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-if-shell 'test "$(uname -s)" = Darwin' 'bind -t vi-copy Enter copy-pipe "pbcopy"'
+if-shell 'test "$(uname -s)" = Darwin' 'bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"'
 
 ### https://github.com/tmux/tmux/issues/145 ###
 # Start copy mode when scrolling up and exit when scrolling down to bottom.
