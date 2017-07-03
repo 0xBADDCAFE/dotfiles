@@ -3,7 +3,6 @@ use Shougo/vimproc
   enable_if "!has('kaoriya') || !has('win32')"
 use thinca/vim-singleton
   enable_if "has('clientserver')"
-use osyo-manga/vim-hopping
 use mattn/webapi-vim
 use mattn/habatobi-vim
 use mattn/sonictemplate-vim
@@ -23,7 +22,11 @@ use tyru/caw.vim
 use vim-airline/vim-airline
 use vim-airline/vim-airline-themes
 use tpope/vim-fugitive
+use osyo-manga/vim-hopping
 use osyo-manga/vim-monster
+use osyo-manga/vim-watchdogs
+use osyo-manga/shabadou.vim
+use cohama/vim-hier
 use whatyouhide/vim-gotham
 use jonathanfilip/vim-lucius
 use w0ng/vim-hybrid
