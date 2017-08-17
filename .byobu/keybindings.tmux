@@ -27,6 +27,8 @@ bind | display-panes \; split-window -v -c "#{pane_current_path}"
 if-shell 'test "$(uname -s)" = Darwin' 'unbind -T copy-mode-vi Enter'
 # bind -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 if-shell 'test "$(uname -s)" = Darwin' 'bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"'
+# Clipboard bridge for VM to Windows host
+if-shell "[ -x $GOPATH/bin/lemonade ]" 'bind -t vi-copy Enter copy-pipe "$GOPATH/bin/lemonade copy"'
 
 ### https://github.com/tmux/tmux/issues/145 ###
 # Start copy mode when scrolling up and exit when scrolling down to bottom.
