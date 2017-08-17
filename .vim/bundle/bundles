@@ -15,13 +15,16 @@ use tacahiroy/ctrlp-funky
 use koron/nyancat-vim
 use koron/codic-vim
 use kana/vim-textobj-user
+use kana/vim-operator-user
 use kana/vim-tabpagecd
 use kana/vim-better-tag-jump
 use tyru/restart.vim
 use tyru/caw.vim
+use ryym/operator-camelize.vim
 use vim-airline/vim-airline
 use vim-airline/vim-airline-themes
 use tpope/vim-fugitive
+use osyo-manga/vim-textobj-multiblock
 use osyo-manga/vim-hopping
 use osyo-manga/vim-monster
 use osyo-manga/vim-watchdogs

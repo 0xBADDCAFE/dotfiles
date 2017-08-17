@@ -53,6 +53,15 @@ endif
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#checks = []
 " }}}
+" textobj-multiblock {{{
+omap ab <Plug>(textobj-multiblock-a)
+omap ib <Plug>(textobj-multiblock-i)
+vmap ab <Plug>(textobj-multiblock-a)
+vmap ib <Plug>(textobj-multiblock-i)
+" }}}
+" operator-camelize {{{
+map <Space>c <Plug>(operator-toggle-camel-snake)
+" }}}
 " indent-guide {{{
 " if has('gui_running')
 "   let g:indent_guides_enable_on_vim_startup = 1
