@@ -49,7 +49,8 @@ use haya14busa/vim-auto-programming
 use lucapette/vim-textobj-underscore
 use slim-template/vim-slim
 use pangloss/vim-javascript
-use mxw/vim-jsx
+# use mxw/vim-jsx
+use MaxMEllon/vim-jsx-pretty
 use jwalton512/vim-blade
 # use dsawardekar/wordpress.vim
 use udalov/kotlin-vim
