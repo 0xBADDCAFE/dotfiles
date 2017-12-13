@@ -29,7 +29,7 @@ use osyo-manga/vim-hopping
 use osyo-manga/vim-monster
 use osyo-manga/vim-watchdogs
 use osyo-manga/shabadou.vim
-use cohama/vim-hier
+# use cohama/vim-hier
 use whatyouhide/vim-gotham
 use jonathanfilip/vim-lucius
 use w0ng/vim-hybrid
