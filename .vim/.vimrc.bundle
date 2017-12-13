@@ -115,6 +115,14 @@ nmap <c-j> <Plug>(columnjump-forward)
 " phpcomplete {{{
 let g:phpcomplete_index_composer_command='composer'
 " }}}
+" vim-php-namespace {{{
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+" }}}
 " autoprogramming {{{
 set completefunc=autoprogramming#complete
 " }}}

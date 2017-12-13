@@ -234,6 +234,8 @@ augroup vimrc_loading
   autocmd CmdWinEnter * setlocal completeopt+=longest
   autocmd CmdwinLeave * setlocal completeopt-=longest
   autocmd CmdWinLeave * setlocal backspace+=eol
+
+  " autocmd FileType jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
 augroup END
 
 " Experimental: smart lcd
@@ -290,6 +292,8 @@ let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 " HTML indent vals
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+" PHP switch case/default indent
+let g:PHP_vintage_case_default_indent = 1
 " }}}
 
 
