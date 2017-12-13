@@ -54,6 +54,7 @@ use slim-template/vim-slim
 use pangloss/vim-javascript
 # use mxw/vim-jsx
 use MaxMEllon/vim-jsx-pretty
+use flowtype/vim-flow
 use jwalton512/vim-blade
 use arnaud-lb/vim-php-namespace
 # use dsawardekar/wordpress.vim
