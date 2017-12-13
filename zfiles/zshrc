@@ -3,6 +3,9 @@ source ${0:a:h}/../.zprezto/runcoms/zshrc
 
 stty -ixon
 
+HISTSIZE=100000
+SAVEHIST=100000
+
 # Ignore rm command in history
 # http://mollifier.hatenablog.com/entry/20090728/p1
 zshaddhistory() {
