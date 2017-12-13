@@ -46,6 +46,7 @@ set cursorline
 set diffopt=filler,iwhite,horizontal
 set display=lastline
 set expandtab
+set foldmethod=marker
 set formatoptions+=mM
 set helplang=ja
 set hidden
