@@ -27,8 +27,8 @@ use tpope/vim-fugitive
 use osyo-manga/vim-textobj-multiblock
 use osyo-manga/vim-hopping
 use osyo-manga/vim-monster
-use osyo-manga/vim-watchdogs
-use osyo-manga/shabadou.vim
+# use osyo-manga/vim-watchdogs
+# use osyo-manga/shabadou.vim
 # use cohama/vim-hier
 use whatyouhide/vim-gotham
 use jonathanfilip/vim-lucius
@@ -50,6 +50,7 @@ use rickhowe/diffchar.vim
 use justinmk/vim-dirvish
 use haya14busa/vim-auto-programming
 use lucapette/vim-textobj-underscore
+use w0rp/ale
 use slim-template/vim-slim
 use pangloss/vim-javascript
 # use mxw/vim-jsx
