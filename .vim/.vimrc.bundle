@@ -6,6 +6,8 @@
 if !exists('loaded_matchit')
   " enable matchit
   runtime macros/matchit.vim
+
+  let g:loaded_matchparen = 1
 endif
 " }}}
 " ctrlp{{{

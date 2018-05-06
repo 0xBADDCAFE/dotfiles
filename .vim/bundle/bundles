@@ -30,6 +30,8 @@ use osyo-manga/vim-monster
 # use osyo-manga/vim-watchdogs
 # use osyo-manga/shabadou.vim
 # use cohama/vim-hier
+use itchyny/vim-parenmatch
+use itchyny/vim-cursorword
 use whatyouhide/vim-gotham
 use jonathanfilip/vim-lucius
 use w0ng/vim-hybrid
