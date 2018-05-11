@@ -125,9 +125,23 @@ nnoremap <Leader>ri :<C-u>QuickRun -mode n -input input<CR>
 " ale {{{
 " Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'never'
+
 " You can disable this option too
 " if you don't want linters to run on opening a file
 " let g:ale_lint_on_enter = 0
+
+let g:ale_linters = {
+\   'java': [],
+\   'kotlin': [],
+\}
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier-eslint']
+
+let g:ale_fix_on_save = 1
+
+let g:ale_javascript_prettier_use_local_config = 1
+
 " For use with vim-flow
 let g:flow#enable = 0
 let g:flow#showquickfix = 1
