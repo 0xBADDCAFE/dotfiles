@@ -67,3 +67,5 @@ use udalov/kotlin-vim
 # use epmatsw/ag.vim
 # use nathanaelkane/vim-indent-guides
 use cohama/agit.vim
+use leafgarland/typescript-vim
+use Quramy/tsuquyomi
