@@ -152,6 +152,16 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:flow#enable = 0
 let g:flow#showquickfix = 1
 " }}}
+" vim-flow {{{
+"Use locally installed flow
+let local_flow = finddir('node_modules', '.;') . '/.bin/flow'
+if matchstr(local_flow, "^\/\\w") == ''
+    let local_flow= getcwd() . "/" . local_flow
+endif
+if executable(local_flow)
+  let g:flow#flowpath = local_flow
+endif
+" }}}
 " columnjump {{{
 nmap <c-k> <Plug>(columnjump-backward)
 nmap <c-j> <Plug>(columnjump-forward)
