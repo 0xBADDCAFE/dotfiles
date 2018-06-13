@@ -66,3 +66,4 @@ use udalov/kotlin-vim
 # use m2mdas/phpcomplete-extended-laravel
 # use epmatsw/ag.vim
 # use nathanaelkane/vim-indent-guides
+use cohama/agit.vim
