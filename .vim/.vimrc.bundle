@@ -177,19 +177,6 @@ autocmd FileType dirvish keeppatterns g@\v/\.[^\/]+/?$@d
 let g:table_mode_corner="|"
 " }}}
 
-" For hariti work {{{
-if has('vim_starting')
-    let g:hariti_config={}
-    let g:hariti_config.source_filename=expand('$HOME') . "/.vim/bundle/bundles"
-    let g:hariti_config.bundle_directory=expand('$HOME') . "/.vim/bundle/"
-    set runtimepath+=$HOME/.vim/bundle/vim-hariti/
-    runtime plugin/hariti.vim
-endif
-
-" Apply plug-ins to your &runtimepath
-HaritiSetup
-" }}}
-
 " settings require loading plugins
 " TODO: If singleton, don't load other scripts.{{{
 if has('clientserver') && !has('gui_macvim')
