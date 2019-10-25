@@ -174,16 +174,6 @@
     },
     {
       "type": "git",
-      "path": "github.com/ryanolsonx/vim-lsp-javascript",
-      "version": "b448b0b5260b1b1cebf0382f43c720000a616174"
-    },
-    {
-      "type": "git",
-      "path": "github.com/ryanolsonx/vim-lsp-typescript",
-      "version": "d0bc31fb8f05c96884f1a9bc651a2fa14ea46554"
-    },
-    {
-      "type": "git",
       "path": "github.com/ryym/operator-camelize.vim",
       "version": "c1dbe8e1df1c9ac77e1f7d457431a3c84d1af27e"
     },
@@ -305,8 +295,6 @@
         "github.com/prabirshrestha/asyncomplete.vim",
         "github.com/prabirshrestha/vim-lsp",
         "github.com/rickhowe/diffchar.vim",
-        "github.com/ryanolsonx/vim-lsp-javascript",
-        "github.com/ryanolsonx/vim-lsp-typescript",
         "github.com/ryym/operator-camelize.vim",
         "github.com/sjl/badwolf",
         "github.com/slim-template/vim-slim",
