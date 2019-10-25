@@ -105,6 +105,7 @@ set cmdheight=1
 set foldcolumn=0
 set scrolloff=5
 set sidescroll=1
+set switchbuf=usetab,newtab
 set sidescrolloff=10
 set tabstop=4
 set shiftwidth=2
