@@ -3,12 +3,26 @@
 " Plugin configuration like the code written in vimrc.
 " This configuration is executed *before* a plugin is loaded.
 function! s:on_load_pre()
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'intelephense',
-        \ 'cmd': {server_info->['node', expand('~/.nvm/versions/node/v12.13.0/lib/node_modules/intelephense/lib/intelephense.js'), '--stdio']},
-        \ 'initialization_options': {"storagePath": "/tmp/intelephense"},
-        \ 'whitelist': ['php'],
-        \ })
+  let g:lsp_diagnostics_echo_cursor = 1
+
+  if executable('intelephense')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'intelephense',
+          \ 'cmd': {server_info->['node', expand('~/.nvm/versions/node/v12.13.0/lib/node_modules/intelephense/lib/intelephense.js'), '--stdio']},
+          \ 'initialization_options': {"storagePath": "/tmp/intelephense"},
+          \ 'whitelist': ['php'],
+          \ })
+  endif
+
+  if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'gopls',
+          \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+          \ 'whitelist': ['go'],
+          \ })
+    autocmd BufWritePre *.go LspDocumentFormatSync
+  endif
+
 endfunction
 
 " Plugin configuration like the code written in vimrc.
