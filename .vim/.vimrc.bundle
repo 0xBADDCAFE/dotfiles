@@ -6,9 +6,10 @@
 if !exists('loaded_matchit')
   " enable matchit
   runtime macros/matchit.vim
-
-  let g:loaded_matchparen = 1
 endif
+" }}}
+" vim-parenmatch {{{
+let g:loaded_matchparen = 1
 " }}}
 " ctrlp{{{
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
