@@ -55,7 +55,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/vim-cursorword",
-      "version": "4878d6185b99131c5f610cc6ad0e223439ac4601"
+      "version": "c35c5e686769db02bb9ccf30cc21fc13786f7f14"
     },
     {
       "type": "git",
@@ -240,7 +240,7 @@
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline",
-      "version": "6d665580a3435f21ad560af192d854d4b608fff5"
+      "version": "62ec2196015c4bcd0e55ac3a970a4668a655b930"
     },
     {
       "type": "git",
@@ -311,7 +311,8 @@
         "github.com/vim-airline/vim-airline",
         "github.com/vim-airline/vim-airline-themes",
         "github.com/w0ng/vim-hybrid",
-        "github.com/whatyouhide/vim-gotham"
+        "github.com/whatyouhide/vim-gotham",
+        "github.com/itchyny/vim-cursorword"
       ]
     }
   ]
