@@ -3,6 +3,9 @@
 " Plugin configuration like the code written in vimrc.
 " This configuration is executed *before* a plugin is loaded.
 function! s:on_load_pre()
+  " let g:asyncomplete_auto_completeopt = 0
+  imap <nul> <c-space>
+  imap <c-space> <Plug>(asyncomplete_force_refresh)
 endfunction
 
 " Plugin configuration like the code written in vimrc.

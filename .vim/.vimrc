@@ -70,6 +70,7 @@ set number
 set ruler
 set showcmd
 set showmatch
+set signcolumn=number
 set smartcase
 set smartindent
 set smarttab
