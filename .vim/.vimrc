@@ -42,7 +42,7 @@ set backup
 set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
 set completeopt=menu,longest
-set cursorline
+set nocursorline
 set diffopt=filler,iwhite,horizontal
 set display=lastline
 set expandtab
@@ -137,10 +137,24 @@ endif
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
+" allow gf in current directory with /leading/slash
+set includeexpr=substitute(v:fname,'^\\/','','')
+set path=;,.,,*
 " }}}
 
 
 " Env-dependent settings {{{
+" Terminal {{{
+if has('vim_starting')
+    " Bar in insert mode
+    let &t_SI .= "\e[6 q"
+    " Blinking block in normal mode
+    let &t_EI .= "\e[2 q"
+    " Underline in replace mode
+    let &t_SR .= "\e[4 q"
+endif
+" }}}
+
 " IME Settings{{{
 if has('multi_byte_ime') || has('xim')
   set iminsert=0
@@ -216,6 +230,8 @@ nnoremap B :ls<CR>:b
 " nnoremap : q:i
 " It doesn't work incsearch.
 "   nnoremap / q/i
+vnoremap p pgvy
+vnoremap P Pgvy
 
 " abbreviations
 " When I use :w! command, it maybe explicitly.
