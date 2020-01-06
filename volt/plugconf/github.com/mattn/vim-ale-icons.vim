@@ -3,20 +3,6 @@
 " Plugin configuration like the code written in vimrc.
 " This configuration is executed *before* a plugin is loaded.
 function! s:on_load_pre()
-  let g:ale_fixers = {
-        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \   'javascript': ['prettier'],
-        \   'typescript': ['prettier'],
-        \   'javascriptreact': ['prettier'],
-        \   'typescriptreact': ['prettier'],
-        \   'css': ['prettier'],
-        \   'php': ['prettier'],
-        \}
-  let g:ale_completion_tsserver_autoimport = 1
-  " let g:ale_php_phpcbf_standard = 'PSR1,PSR2'
-
-  let g:ale_fix_on_save = 0
-  nmap <Space>l <Plug>(ale_fix)
 endfunction
 
 " Plugin configuration like the code written in vimrc.

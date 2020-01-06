@@ -9,18 +9,8 @@
     },
     {
       "type": "git",
-      "path": "github.com/0xBADDCAFE/vim-markdown",
-      "version": "492116f5e5787999240c8a3838192bd192842b85"
-    },
-    {
-      "type": "git",
       "path": "github.com/Donearm/Ubaryd",
       "version": "db92ad9e7b9b859418c8cccf5de58ab701c567c9"
-    },
-    {
-      "type": "git",
-      "path": "github.com/MaxMEllon/vim-jsx-pretty",
-      "version": "838cfce82df8cf99df5e3a200ad23f6c0f027550"
     },
     {
       "type": "git",
@@ -84,11 +74,6 @@
     },
     {
       "type": "git",
-      "path": "github.com/jwalton512/vim-blade",
-      "version": "9534101808cc320eef003129a40cab04b026a20c"
-    },
-    {
-      "type": "git",
       "path": "github.com/kana/vim-better-tag-jump",
       "version": "8aee31d8e756fd0b94cd766151ea63d62a21b622"
     },
@@ -116,11 +101,6 @@
       "type": "git",
       "path": "github.com/koron/nyancat-vim",
       "version": "6454a2765e31db8099f6ba665eb2d2aa23ea357d"
-    },
-    {
-      "type": "git",
-      "path": "github.com/leafgarland/typescript-vim",
-      "version": "616186fd8a04afa32bae8dc0b70ab7f9cdb427fd"
     },
     {
       "type": "git",
@@ -159,11 +139,6 @@
     },
     {
       "type": "git",
-      "path": "github.com/pangloss/vim-javascript",
-      "version": "2e4a8c485cdf601bb2f2761ea68c09750a0b82e0"
-    },
-    {
-      "type": "git",
       "path": "github.com/prabirshrestha/async.vim",
       "version": "f67ecb5a1120d0d0fb9312afcf262c829b218ca2"
     },
@@ -199,11 +174,6 @@
     },
     {
       "type": "git",
-      "path": "github.com/slim-template/vim-slim",
-      "version": "6673e404370e6f3d44be342cf03ea8c26ab02c66"
-    },
-    {
-      "type": "git",
       "path": "github.com/tacahiroy/ctrlp-funky",
       "version": "3f29ad2bd6484d3bf12e9585040e47cfc7bba098"
     },
@@ -230,7 +200,7 @@
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "9ec6b55d037651f0a92583cff0a038912266e7f9"
+      "version": "ddd64fc4c5c5365d56478f100f19898375244890"
     },
     {
       "type": "git",
@@ -244,13 +214,8 @@
     },
     {
       "type": "git",
-      "path": "github.com/udalov/kotlin-vim",
-      "version": "b9fa728701a0aa0b9a2ffe92f10880348fc27a8f"
-    },
-    {
-      "type": "git",
       "path": "github.com/vim-airline/vim-airline",
-      "version": "66f77d4a77e54946fedaac7d54d02271751eab40"
+      "version": "c1de3d33701492a388684ffcc9899faf4b863e92"
     },
     {
       "type": "git",
@@ -273,9 +238,7 @@
       "name": "default",
       "repos_path": [
         "github.com/0xBADDCAFE/midnight.vim",
-        "github.com/0xBADDCAFE/vim-markdown",
         "github.com/Donearm/Ubaryd",
-        "github.com/MaxMEllon/vim-jsx-pretty",
         "github.com/arnaud-lb/vim-php-namespace",
         "github.com/ctrlpvim/ctrlp.vim",
         "github.com/dense-analysis/ale",
@@ -287,14 +250,12 @@
         "github.com/itchyny/vim-parenmatch",
         "github.com/jonathanfilip/vim-lucius",
         "github.com/justinmk/vim-dirvish",
-        "github.com/jwalton512/vim-blade",
         "github.com/kana/vim-better-tag-jump",
         "github.com/kana/vim-operator-user",
         "github.com/kana/vim-tabpagecd",
         "github.com/kana/vim-textobj-user",
         "github.com/koron/codic-vim",
         "github.com/koron/nyancat-vim",
-        "github.com/leafgarland/typescript-vim",
         "github.com/lucapette/vim-textobj-underscore",
         "github.com/mattn/emmet-vim",
         "github.com/mattn/sonictemplate-vim",
@@ -302,7 +263,6 @@
         "github.com/mattn/webapi-vim",
         "github.com/osyo-manga/vim-anzu",
         "github.com/osyo-manga/vim-textobj-multiblock",
-        "github.com/pangloss/vim-javascript",
         "github.com/prabirshrestha/async.vim",
         "github.com/prabirshrestha/asyncomplete-lsp.vim",
         "github.com/prabirshrestha/asyncomplete.vim",
@@ -310,7 +270,6 @@
         "github.com/rickhowe/diffchar.vim",
         "github.com/ryym/operator-camelize.vim",
         "github.com/sjl/badwolf",
-        "github.com/slim-template/vim-slim",
         "github.com/tacahiroy/ctrlp-funky",
         "github.com/thinca/vim-qfreplace",
         "github.com/thinca/vim-quickrun",
@@ -319,7 +278,6 @@
         "github.com/tpope/vim-fugitive",
         "github.com/tyru/caw.vim",
         "github.com/tyru/restart.vim",
-        "github.com/udalov/kotlin-vim",
         "github.com/vim-airline/vim-airline",
         "github.com/vim-airline/vim-airline-themes",
         "github.com/w0ng/vim-hybrid",
