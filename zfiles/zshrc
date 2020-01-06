@@ -35,7 +35,6 @@ unsetopt promptsp
 # setopt automenu
 # unsetopt menucomplete
 
-cdpath=(.. ~ ~/src)
 bindkey -e
 
 autoload -Uz compinit
