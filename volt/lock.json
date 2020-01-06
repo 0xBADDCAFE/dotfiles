@@ -20,32 +20,42 @@
     {
       "type": "git",
       "path": "github.com/MaxMEllon/vim-jsx-pretty",
-      "version": "8f8c9edba37310d17e59a625b177ec6a37c07035"
+      "version": "838cfce82df8cf99df5e3a200ad23f6c0f027550"
     },
     {
       "type": "git",
       "path": "github.com/arnaud-lb/vim-php-namespace",
-      "version": "8741c0a71758fc4525efa0e7b09ae5ed81522126"
+      "version": "0958f3436b6c3d1c107f2efd7899a92d50888430"
     },
     {
       "type": "git",
       "path": "github.com/ctrlpvim/ctrlp.vim",
-      "version": "6bca8770a04c099e8c6ec7c7ea58cf9a17c8e44d"
+      "version": "44c8e24956d7dcfee3ee6083a0573fed31d136ed"
+    },
+    {
+      "type": "git",
+      "path": "github.com/dense-analysis/ale",
+      "version": "4afbf2f25dc0ce86b118261b0cfb904c80ae6ba0"
     },
     {
       "type": "git",
       "path": "github.com/dhruvasagar/vim-table-mode",
-      "version": "126897a6fbcbf24523737502524208f75f255b88"
+      "version": "0af25d72ebc0271648c8f91c0ce5c59174d2761b"
     },
     {
       "type": "git",
       "path": "github.com/editorconfig/editorconfig-vim",
-      "version": "c718cefc51ccdaf7bd27c4c1ae2de55103434241"
+      "version": "7e5b4a91ad55b992247edb87543ed7855db1a199"
     },
     {
       "type": "git",
       "path": "github.com/glidenote/memolist.vim",
       "version": "da76c3050a2d62943a50f1167604e9ae4026351d"
+    },
+    {
+      "type": "git",
+      "path": "github.com/haya14busa/vim-asterisk",
+      "version": "7cf0d8f379babbdbf538aefe3af444ac4ba21dce"
     },
     {
       "type": "git",
@@ -55,12 +65,12 @@
     {
       "type": "git",
       "path": "github.com/itchyny/vim-cursorword",
-      "version": "c35c5e686769db02bb9ccf30cc21fc13786f7f14"
+      "version": "4878d6185b99131c5f610cc6ad0e223439ac4601"
     },
     {
       "type": "git",
       "path": "github.com/itchyny/vim-parenmatch",
-      "version": "1a00e366a24f37ceaf8df87b5ff8bbd9f90e3758"
+      "version": "663d45d56e4a7518c6618194358ae666f0706b73"
     },
     {
       "type": "git",
@@ -70,7 +80,7 @@
     {
       "type": "git",
       "path": "github.com/justinmk/vim-dirvish",
-      "version": "79ffe5c6cf0a56d693659b6b98e92a82daf105f4"
+      "version": "9c12328df924ddb875ee1e5c9fc0f939b62d6a6c"
     },
     {
       "type": "git",
@@ -110,7 +120,7 @@
     {
       "type": "git",
       "path": "github.com/leafgarland/typescript-vim",
-      "version": "5a319ea5504e18215d155576c78d1b7fb8e22c8f"
+      "version": "616186fd8a04afa32bae8dc0b70ab7f9cdb427fd"
     },
     {
       "type": "git",
@@ -125,7 +135,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/sonictemplate-vim",
-      "version": "859adef1e67cc0fb1a99e4e3f3d58360f5464f02"
+      "version": "0925277597e5db0e4b601aecc290b79db239b174"
     },
     {
       "type": "git",
@@ -135,7 +145,12 @@
     {
       "type": "git",
       "path": "github.com/mattn/webapi-vim",
-      "version": "4d1e59c4fe01dec9d3008704dd06977a7bc3b0f2"
+      "version": "10b8e926d85a3ab689c2966a3df1139bcb4e197f"
+    },
+    {
+      "type": "git",
+      "path": "github.com/osyo-manga/vim-anzu",
+      "version": "45b60d37cb9de90f6c89f7ddeacb7ae430ebcae2"
     },
     {
       "type": "git",
@@ -145,17 +160,17 @@
     {
       "type": "git",
       "path": "github.com/pangloss/vim-javascript",
-      "version": "b6c8c8419240bdd29b5eb51a47d488fd390deed5"
+      "version": "2e4a8c485cdf601bb2f2761ea68c09750a0b82e0"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/async.vim",
-      "version": "627a8c4092df24260d3dc2104bc1d944c78f91ca"
+      "version": "f67ecb5a1120d0d0fb9312afcf262c829b218ca2"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-lsp.vim",
-      "version": "05389e93a81aa4262355452ebdac66ae2a1939fb"
+      "version": "9e7b2492578dca86ed12b6352cb56d9fc8ac9a6e"
     },
     {
       "type": "git",
@@ -165,7 +180,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "46af4cd6015a786877d58fc65802435d60d11e0c"
+      "version": "8f48b74e55a989ff0b1cf1c9ab34173d28d18f08"
     },
     {
       "type": "git",
@@ -190,7 +205,7 @@
     {
       "type": "git",
       "path": "github.com/tacahiroy/ctrlp-funky",
-      "version": "a50ec25f6dca38a298a0a36354bb8241b4bee121"
+      "version": "3f29ad2bd6484d3bf12e9585040e47cfc7bba098"
     },
     {
       "type": "git",
@@ -200,27 +215,22 @@
     {
       "type": "git",
       "path": "github.com/thinca/vim-quickrun",
-      "version": "008dd08aad2a544938acbbcf7cee6d3735ebd2fb"
+      "version": "4967eafcaf5bd09e4e008d4ce46f75d38fdfb8e4"
     },
     {
       "type": "git",
       "path": "github.com/thinca/vim-ref",
-      "version": "b45d10f6d0c82e3afd17774626e952fde03274a1"
+      "version": "161520737e234a20d67f619e772c0aacd5541f01"
     },
     {
       "type": "git",
       "path": "github.com/thinca/vim-singleton",
-      "version": "1d9ef6ef40b4de6ce2c973b3e8dc1d521ddcb274"
-    },
-    {
-      "type": "git",
-      "path": "github.com/thinca/vim-visualstar",
-      "version": "a18cd0e7a03311ac709595c1d261ed44b45c9098"
+      "version": "ba98ee37a99054099feba02dbbe3733bfab085d2"
     },
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "b09c5d2523f9964add241a04862c2f8bbd7d428f"
+      "version": "9ec6b55d037651f0a92583cff0a038912266e7f9"
     },
     {
       "type": "git",
@@ -240,12 +250,12 @@
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline",
-      "version": "62ec2196015c4bcd0e55ac3a970a4668a655b930"
+      "version": "66f77d4a77e54946fedaac7d54d02271751eab40"
     },
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline-themes",
-      "version": "0d5c5c1e2995126e76606a628316c8e3f5efb37a"
+      "version": "14c3a60ab0f42aa1001d8f32ffaab2c28935a1e7"
     },
     {
       "type": "git",
@@ -268,9 +278,11 @@
         "github.com/MaxMEllon/vim-jsx-pretty",
         "github.com/arnaud-lb/vim-php-namespace",
         "github.com/ctrlpvim/ctrlp.vim",
+        "github.com/dense-analysis/ale",
         "github.com/dhruvasagar/vim-table-mode",
         "github.com/editorconfig/editorconfig-vim",
         "github.com/glidenote/memolist.vim",
+        "github.com/haya14busa/vim-asterisk",
         "github.com/haya14busa/vim-auto-programming",
         "github.com/itchyny/vim-parenmatch",
         "github.com/jonathanfilip/vim-lucius",
@@ -288,6 +300,7 @@
         "github.com/mattn/sonictemplate-vim",
         "github.com/mattn/vim-prompter",
         "github.com/mattn/webapi-vim",
+        "github.com/osyo-manga/vim-anzu",
         "github.com/osyo-manga/vim-textobj-multiblock",
         "github.com/pangloss/vim-javascript",
         "github.com/prabirshrestha/async.vim",
@@ -303,7 +316,6 @@
         "github.com/thinca/vim-quickrun",
         "github.com/thinca/vim-ref",
         "github.com/thinca/vim-singleton",
-        "github.com/thinca/vim-visualstar",
         "github.com/tpope/vim-fugitive",
         "github.com/tyru/caw.vim",
         "github.com/tyru/restart.vim",
@@ -311,8 +323,16 @@
         "github.com/vim-airline/vim-airline",
         "github.com/vim-airline/vim-airline-themes",
         "github.com/w0ng/vim-hybrid",
-        "github.com/whatyouhide/vim-gotham",
-        "github.com/itchyny/vim-cursorword"
+        "github.com/whatyouhide/vim-gotham"
+      ]
+    },
+    {
+      "name": "repro",
+      "repos_path": [
+        "github.com/prabirshrestha/async.vim",
+        "github.com/prabirshrestha/asyncomplete-lsp.vim",
+        "github.com/prabirshrestha/asyncomplete.vim",
+        "github.com/prabirshrestha/vim-lsp"
       ]
     }
   ]
