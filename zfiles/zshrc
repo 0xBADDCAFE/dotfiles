@@ -1,10 +1,73 @@
-# ../.zprezto/runcoms/zshrc
-source ${0:a:h}/../.zprezto/runcoms/zshrc
-
-stty -ixon
-
+HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
+
+setopt alwaystoend
+setopt autocd
+setopt autopushd
+setopt cdablevars
+setopt checkjobs
+setopt correct
+setopt combiningchars
+setopt extendedhistory
+setopt histexpiredupsfirst
+setopt histfindnodups
+setopt histignorespace
+# This effects duplicates of the previous event only.
+# setopt histignoredups
+setopt histignorealldups
+setopt histsavenodups
+setopt histverify
+setopt interactivecomments
+setopt longlistjobs
+setopt pushdignoredups
+setopt sharehistory
+unsetopt caseglob
+unsetopt clobber
+unsetopt flowcontrol
+unsetopt hup
+unsetopt nomatch
+unsetopt promptsp
+
+# http://zsh.sourceforge.net/FAQ/zshfaq04.html
+# (These are on by default)
+# setopt autolist
+# setopt automenu
+# unsetopt menucomplete
+
+cdpath=(.. ~ ~/src)
+bindkey -e
+
+autoload -Uz compinit
+compinit -C
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:default' menu select
+# zstyle ':completion:*' menu select interactive
+# https://qiita.com/watertight/items/2454f3e9e43ef647eb6b
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
+zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
+zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*:matches' group yes
+zstyle ':completion:*' group-name ''
+# Prevent expantion prefix like ~ when path completion
+zstyle ':completion:*' keep-prefix
+
+# TODO: Check autosuggestions module: autosuggestions/README.md
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+bindkey "^u" backward-kill-line
+
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+zstyle :bracketed-paste-magic paste-init backward-extend-paste
 
 # Ignore rm command in history
 # http://mollifier.hatenablog.com/entry/20090728/p1
@@ -20,18 +83,6 @@ zshaddhistory() {
   # ]]
 }
 
-# TODO: Check autosuggestions module: autosuggestions/README.md
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
-bindkey "^u" backward-kill-line
-
-autoload -Uz bracketed-paste-magic
-zle -N bracketed-paste bracketed-paste-magic
-zstyle :bracketed-paste-magic paste-init backward-extend-paste
-
 # Set the Less input preprocessor.
 # Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
 # NOTE: lesspipe.sh can't load in zprofile so fail to existing check.
@@ -40,4 +91,30 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESS_ADVANCED_PREPROCESSOR=1
 fi
 
-setopt checkjobs
+alias rm="rm -i"
+alias ll="ls -hl"
+alias la="ls -ahl"
+
+if [ "$(uname)" == 'Darwin' -a ! -x gls ]; then
+  # BSD ls
+  alias ls="ls -G"
+  export LSCOLORS=exfxcxdxbxGxDxabagacad
+  zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+else
+  if [ -x gls ]; then
+    # coreutils gls
+    alias ls="gls --color=auto"
+  else
+    # GNU ls
+    alias ls="ls --color=auto"
+  fi
+  # https://github.com/Microsoft/vscode/issues/7556
+  # export LS_COLORS="ow=01;36;40"
+  # Or, below changes to orange but forgot source page
+  # export LS_COLORS=$LS_COLORS"ow=00;33:"
+  export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=01;36:"
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
+
+# Load plugins
+source ${0:a:h}/zplugin
