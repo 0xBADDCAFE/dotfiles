@@ -10,8 +10,9 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
 
-export NVM_LAZY_LOAD=true
-zplugin light lukechilds/zsh-nvm
+# Can't detect that has executable from Vim because of wrapped by function 
+# export NVM_LAZY_LOAD=true
+# zplugin light lukechilds/zsh-nvm
 
 # Scripts that are built at install (there's single default make target, "install",
 # and it constructs scripts by `cat'ing a few files). The make'' ice could also be:
