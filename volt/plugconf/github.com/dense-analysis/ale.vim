@@ -15,6 +15,7 @@ function! s:on_load_pre()
   let g:ale_completion_tsserver_autoimport = 1
   " let g:ale_php_phpcbf_standard = 'PSR1,PSR2'
 
+  let g:ale_lint_on_text_changed = 'normal'
   let g:ale_fix_on_save = 0
   nmap <Space>l <Plug>(ale_fix)
 endfunction
