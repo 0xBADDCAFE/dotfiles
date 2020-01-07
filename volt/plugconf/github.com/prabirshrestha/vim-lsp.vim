@@ -3,26 +3,21 @@
 " Plugin configuration like the code written in vimrc.
 " This configuration is executed *before* a plugin is loaded.
 function! s:on_load_pre()
-  let g:lsp_diagnostics_echo_cursor = 1
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=number
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    " refer to doc to add more commands
+  endfunction
 
-  if executable('intelephense')
-    au User lsp_setup call lsp#register_server({
-          \ 'name': 'intelephense',
-          \ 'cmd': {server_info->['node', expand('~/.nvm/versions/node/v12.13.0/lib/node_modules/intelephense/lib/intelephense.js'), '--stdio']},
-          \ 'initialization_options': {"storagePath": "/tmp/intelephense"},
-          \ 'whitelist': ['php'],
-          \ })
-  endif
+  augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
 
-  if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-          \ 'name': 'gopls',
-          \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-          \ 'whitelist': ['go'],
-          \ })
-    autocmd BufWritePre *.go LspDocumentFormatSync
-  endif
-
+  let g:lsp_diagnostics_echo_cursor = 0
 endfunction
 
 " Plugin configuration like the code written in vimrc.
