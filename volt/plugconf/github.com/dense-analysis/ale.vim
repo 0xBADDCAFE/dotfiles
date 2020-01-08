@@ -4,7 +4,7 @@
 " This configuration is executed *before* a plugin is loaded.
 function! s:on_load_pre()
   let g:ale_linters = {
-        \   'go': ['gometalinter', 'gofmt'],
+        \   'go': ['gopls', 'gofmt'],
         \   'java': [],
         \   'kotlin': [],
   }
