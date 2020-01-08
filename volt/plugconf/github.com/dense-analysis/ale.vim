@@ -3,6 +3,11 @@
 " Plugin configuration like the code written in vimrc.
 " This configuration is executed *before* a plugin is loaded.
 function! s:on_load_pre()
+  let g:ale_linters = {
+        \   'go': ['gometalinter', 'gofmt'],
+        \   'java': [],
+        \   'kotlin': [],
+  }
   let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \   'javascript': ['prettier'],
@@ -12,12 +17,21 @@ function! s:on_load_pre()
         \   'css': ['prettier'],
         \   'php': ['prettier'],
         \}
-  let g:ale_completion_tsserver_autoimport = 1
-  " let g:ale_php_phpcbf_standard = 'PSR1,PSR2'
+  " let g:ale_fixers['javascript'] = ['prettier-eslint']
+  " let g:ale_fixers['typescript'] = ['tslint']
 
   let g:ale_lint_on_text_changed = 'normal'
   let g:ale_fix_on_save = 0
   nmap <Space>l <Plug>(ale_fix)
+
+  let g:ale_pattern_options = {
+        \   '.*\.json$': {'ale_enabled': 0},
+        \   '.*node_modules/.*': {'ale_enabled': 0},
+        \}
+
+  let g:ale_javascript_prettier_use_local_config = 1
+  let g:ale_completion_tsserver_autoimport = 1
+  " let g:ale_php_phpcbf_standard = 'PSR1,PSR2'
 endfunction
 
 " Plugin configuration like the code written in vimrc.
