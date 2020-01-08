@@ -29,6 +29,8 @@ if-shell 'test "$(uname -s)" = Darwin' 'unbind -T copy-mode-vi Enter'
 if-shell 'test "$(uname -s)" = Darwin' 'bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"'
 # Clipboard bridge for VM to Windows host
 if-shell "[ -x $GOPATH/bin/lemonade ]" 'bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "$GOPATH/bin/lemonade copy"'
+# Clipboard bridge for WSL
+if-shell "[ -x /mnt/c/Windows/System32/clip.exe ]" 'bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "/mnt/c/Windows/System32/clip.exe"'
 
 ### https://github.com/tmux/tmux/issues/145 ###
 # Start copy mode when scrolling up and exit when scrolling down to bottom.
