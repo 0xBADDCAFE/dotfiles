@@ -7,7 +7,7 @@ function! s:on_load_pre()
         \   'go': ['gopls', 'gofmt'],
         \   'java': [],
         \   'kotlin': [],
-  }
+        \}
   let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \   'javascript': ['prettier'],
