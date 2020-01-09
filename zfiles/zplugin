@@ -10,6 +10,8 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
 
+zplugin light zsh-users/zsh-completions
+
 # Can't detect that has executable from Vim because of wrapped by function 
 # export NVM_LAZY_LOAD=true
 # zplugin light lukechilds/zsh-nvm
