@@ -90,7 +90,7 @@ if has('kaoriya')
   set fileencodings=guess,ucs-bom,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
   set formatexpr=autofmt#japanese#formatexpr()
 else
-  set fileencodings=utf-8,sjis,ucs-bom,iso-2022-jp-3,euc-jisx0213,euc-jp
+  set fileencodings=utf-8,cp932,sjis,ucs-bom,iso-2022-jp-3,euc-jisx0213,euc-jp
 endif
 if exists('+breakindent')
   set wrap
