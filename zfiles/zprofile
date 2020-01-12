@@ -12,3 +12,5 @@ fi
 
 export EDITOR='vim'
 export VISUAL='vim'
+
+export LESS="-FMRXiw -z-5"
