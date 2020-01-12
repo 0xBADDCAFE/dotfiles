@@ -65,7 +65,8 @@ compinit -C
 
 zstyle ':completion:*' verbose yes
 # Ignore _expand if bind expand-or-complete (see: man zshcompsys)
-zstyle ':completion:*' completer _complete _match _prefix _approximate _list _history
+# zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*' completer _complete _match _prefix _approximate _list
 zstyle ':completion:*:default' menu select
 # zstyle ':completion:*' menu select interactive
 # https://qiita.com/watertight/items/2454f3e9e43ef647eb6b
