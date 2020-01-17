@@ -45,7 +45,7 @@
     {
       "type": "git",
       "path": "github.com/haya14busa/vim-asterisk",
-      "version": "7cf0d8f379babbdbf538aefe3af444ac4ba21dce"
+      "version": "66a64172d21fab44312d0d49b22f63eeeaf89b23"
     },
     {
       "type": "git",
@@ -60,7 +60,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/vim-parenmatch",
-      "version": "663d45d56e4a7518c6618194358ae666f0706b73"
+      "version": "9551aace10dd3aede2499645b9351dd965be1387"
     },
     {
       "type": "git",
@@ -115,12 +115,17 @@
     {
       "type": "git",
       "path": "github.com/mattn/sonictemplate-vim",
-      "version": "0925277597e5db0e4b601aecc290b79db239b174"
+      "version": "e972aa09aa158189c36913b62a4344cb3ca78c76"
     },
     {
       "type": "git",
       "path": "github.com/mattn/vim-ale-icons",
       "version": "b795e40d824548218201d5e1ac28526a6efb92e7"
+    },
+    {
+      "type": "git",
+      "path": "github.com/mattn/vim-goimports",
+      "version": "ae085604f1825667bf9212266720f01bec22303c"
     },
     {
       "type": "git",
@@ -130,7 +135,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/vim-lsp-settings",
-      "version": "e5179f80ff05d39d99b4b1b695cbd127ed522c22"
+      "version": "92500966993fd19b8fe3050b1c2d9572a46151a6"
     },
     {
       "type": "git",
@@ -170,7 +175,7 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "eadb20a0c87824a33a3d8f43c4c6386c4a96e817"
+      "version": "dbfbdddb94c718d4445f6b08fc8f71ff5012a0d6"
     },
     {
       "type": "git",
@@ -215,7 +220,7 @@
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "4074727343e2a906f4bc1472685f59739f8346f0"
+      "version": "c83355d5c52002f94d08267f1d14ca6d1a2763e9"
     },
     {
       "type": "git",
@@ -230,12 +235,12 @@
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline",
-      "version": "c1de3d33701492a388684ffcc9899faf4b863e92"
+      "version": "8d694cba9c22efe8320a8fbc919a50bd938e7929"
     },
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline-themes",
-      "version": "14c3a60ab0f42aa1001d8f32ffaab2c28935a1e7"
+      "version": "9cfa14a6b7e2bd923b3f14252091ed35eda188fd"
     },
     {
       "type": "git",
@@ -275,6 +280,7 @@
         "github.com/mattn/emmet-vim",
         "github.com/mattn/sonictemplate-vim",
         "github.com/mattn/vim-ale-icons",
+        "github.com/mattn/vim-goimports",
         "github.com/mattn/vim-lsp-icons",
         "github.com/mattn/vim-lsp-settings",
         "github.com/mattn/vim-prompter",
