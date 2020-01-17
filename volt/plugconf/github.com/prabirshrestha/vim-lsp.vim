@@ -6,7 +6,7 @@ function! s:on_load_pre()
   function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=number
-    nmap <buffer> gd <plug>(lsp-definition)
+    " nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> <f2> <plug>(lsp-rename)
     nmap <buffer> K <plug>(lsp-hover)
     " refer to doc to add more commands
