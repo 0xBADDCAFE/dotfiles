@@ -187,16 +187,30 @@ if has('gui_running')
   " }}}
   colorscheme lucius
 else
-  autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal ctermbg=NONE
-  autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE
-  autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel ctermbg=NONE
+  if exists('+termguicolors')
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal guibg=NONE
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText guibg=NONE
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel guibg=NONE
 
-  autocmd vimrc_loading VimEnter * highlight Tabline ctermbg=24
-  autocmd vimrc_loading VimEnter * highlight TablineFill ctermbg=24
-  autocmd vimrc_loading ColorScheme gotham256 highlight Tabline ctermbg=24
-  autocmd vimrc_loading ColorScheme gotham256 highlight TablineFill ctermbg=24
+    autocmd vimrc_loading VimEnter * highlight Tabline guibg=#195466
+    autocmd vimrc_loading VimEnter * highlight TablineFill guibg=#195466
+    autocmd vimrc_loading ColorScheme gotham highlight Tabline guibg=#195466
+    autocmd vimrc_loading ColorScheme gotham highlight TablineFill guibg=#195466
 
-  colorscheme gotham256
+    colorscheme gotham
+  elseif
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal ctermbg=NONE
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel ctermbg=NONE
+
+    autocmd vimrc_loading VimEnter * highlight Tabline ctermbg=24
+    autocmd vimrc_loading VimEnter * highlight TablineFill ctermbg=24
+    autocmd vimrc_loading ColorScheme gotham256 highlight Tabline ctermbg=24
+    autocmd vimrc_loading ColorScheme gotham256 highlight TablineFill ctermbg=24
+
+    colorscheme gotham256
+  endif
+
   " let g:airline_theme='gotham256'
   " au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
 endif
