@@ -23,6 +23,8 @@ if [[ -o interactive ]]; then
   #   /usr/local/{bin,sbin}
   #   $path
   # )
+
+  stty -ixon
 fi
 
 setopt alwaystoend
