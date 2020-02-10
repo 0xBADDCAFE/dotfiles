@@ -25,12 +25,12 @@
     {
       "type": "git",
       "path": "github.com/ctrlpvim/ctrlp.vim",
-      "version": "44c8e24956d7dcfee3ee6083a0573fed31d136ed"
+      "version": "585143acbe15f362852d78bd050baff3c12902d7"
     },
     {
       "type": "git",
       "path": "github.com/dense-analysis/ale",
-      "version": "4afbf2f25dc0ce86b118261b0cfb904c80ae6ba0"
+      "version": "d6d2a0c77010db6a75a8942e2af9606971738c23"
     },
     {
       "type": "git",
@@ -40,7 +40,7 @@
     {
       "type": "git",
       "path": "github.com/editorconfig/editorconfig-vim",
-      "version": "7e5b4a91ad55b992247edb87543ed7855db1a199"
+      "version": "21fbc2afe8f30e98b890fb42fc6bc18fc0c0380e"
     },
     {
       "type": "git",
@@ -50,7 +50,7 @@
     {
       "type": "git",
       "path": "github.com/haya14busa/vim-asterisk",
-      "version": "66a64172d21fab44312d0d49b22f63eeeaf89b23"
+      "version": "77e97061d6691637a034258cc415d98670698459"
     },
     {
       "type": "git",
@@ -65,7 +65,7 @@
     {
       "type": "git",
       "path": "github.com/itchyny/vim-parenmatch",
-      "version": "9551aace10dd3aede2499645b9351dd965be1387"
+      "version": "3352290bc571cba404d884893ccfce9635c0ffae"
     },
     {
       "type": "git",
@@ -120,7 +120,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/sonictemplate-vim",
-      "version": "ec4b09feb065fe3b60af4e6e3de8d034ac08ac41"
+      "version": "7d7f72dcf1d5be24746b21e28e87cb3ed7adebef"
     },
     {
       "type": "git",
@@ -135,7 +135,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/vim-lexiv",
-      "version": "69c2fa011865ad1baf91c8e400cf106a25e169f3"
+      "version": "d349611f2a1810433776a83d8502eb79b19cbfaf"
     },
     {
       "type": "git",
@@ -145,7 +145,7 @@
     {
       "type": "git",
       "path": "github.com/mattn/vim-lsp-settings",
-      "version": "3562d7b853a6fb2589631b42517348f5af8ab760"
+      "version": "09d70add97397ab896614dcd03275c57ef18013d"
     },
     {
       "type": "git",
@@ -175,17 +175,17 @@
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete-lsp.vim",
-      "version": "9e7b2492578dca86ed12b6352cb56d9fc8ac9a6e"
+      "version": "1b93ef2d527e64a55d3b45d370ed59d6aa967fef"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/asyncomplete.vim",
-      "version": "db3ab51ef6d42ac410afaea53fc0513afd0d5e25"
+      "version": "52f857a4c4c51abf6b29f4ce0b3db0aae992f619"
     },
     {
       "type": "git",
       "path": "github.com/prabirshrestha/vim-lsp",
-      "version": "2c9a2c6bdf439501ebe9fcc39b797b8bde5a06f0"
+      "version": "20d1cf3968e5c3fbd880ef32202930f68d93a2da"
     },
     {
       "type": "git",
@@ -200,7 +200,7 @@
     {
       "type": "git",
       "path": "github.com/sjl/badwolf",
-      "version": "73e3198860d1e874874844688b83b6d7b35d644f"
+      "version": "e894dd4eacd65a12921655fe85c7b3bdba24b9cf"
     },
     {
       "type": "git",
@@ -215,7 +215,7 @@
     {
       "type": "git",
       "path": "github.com/thinca/vim-quickrun",
-      "version": "4967eafcaf5bd09e4e008d4ce46f75d38fdfb8e4"
+      "version": "f637c35b16d6e83cc71dababbda2a64eb29b3f5e"
     },
     {
       "type": "git",
@@ -230,7 +230,7 @@
     {
       "type": "git",
       "path": "github.com/tpope/vim-fugitive",
-      "version": "268a9c1b8f80480b105c60ff52e7a752ef22d385"
+      "version": "460664018a8eaecd89fb2b095fad59c0e16f5f06"
     },
     {
       "type": "git",
@@ -245,12 +245,12 @@
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline",
-      "version": "d4502d02a168167088b16e2c660ad859de5eeee4"
+      "version": "099dd92eebe09ab27a483e381f2a708945e34330"
     },
     {
       "type": "git",
       "path": "github.com/vim-airline/vim-airline-themes",
-      "version": "7f2081e2cbb4bd3e29ce1d4379eb6444c62d6bed"
+      "version": "6270e7d58828999da7239785ad4269899fab99b5"
     },
     {
       "type": "git",
