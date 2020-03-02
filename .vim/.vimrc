@@ -260,16 +260,36 @@ augroup vimrc_loading
   autocmd CmdwinLeave * setlocal completeopt-=longest
   autocmd CmdWinLeave * setlocal backspace+=eol
 
+  " Experimental: smart lcd
+  if has('win32') && has('gui_running')
+    cd $HOME
+    autocmd BufReadPost * if @# == '' && getcwd() == $HOME | cd %:p:h | endif
+  endif
+
+  if exists('+transparency')
+    if has('win32')
+      autocmd FocusGained * set transparency=248
+      autocmd FocusLost * set transparency=192
+    elseif has('gui_macvim')
+      autocmd FocusGained * set transparency=10
+      autocmd FocusLost * set transparency=50
+    endif
+  endif
+
+  if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+          \   if &omnifunc == "" |
+          \       setlocal omnifunc=syntaxcomplete#Complete |
+          \   endif
+  endif
+
+  autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+
   " autocmd FileType jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
 augroup END
-
-" Experimental: smart lcd
-if has('win32') && has('gui_running')
-  cd $HOME
-  augroup vimrc_loading
-    autocmd BufReadPost * if @# == '' && getcwd() == $HOME | cd %:p:h | endif
-  augroup END
-endif
 
 " " binary XXD editing mode
 " " FIXME: if enable these sentences, doesn't work Autodate.
@@ -282,27 +302,6 @@ endif
 "   autocmd BufWritePost * if &binary | silent %!xxd -g 1
 "   autocmd BufWritePost * set nomod | endif
 " augroup END
-
-if exists('+transparency')
-  augroup hack234
-    autocmd!
-    " TODO: on mac settings
-    if has('win32')
-      autocmd FocusGained * set transparency=248
-      autocmd FocusLost * set transparency=192
-    elseif has('gui_macvim')
-      autocmd FocusGained * set transparency=10
-      autocmd FocusLost * set transparency=50
-    endif
-  augroup END
-endif
-
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \   if &omnifunc == "" |
-        \       setlocal omnifunc=syntaxcomplete#Complete |
-        \   endif
-endif
 
 " }}}
 
