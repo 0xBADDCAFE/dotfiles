@@ -16,8 +16,8 @@ unbind -n C-t
 set -g prefix ^T
 set -g prefix2 ^T
 bind t send-prefix
-bind % display-panes \; split-window -h -c "#{pane_current_path}"
-bind | display-panes \; split-window -v -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}" \; display-panes
+bind | split-window -v -c "#{pane_current_path}" \; display-panes
 
 # Setup 'v' to begin selection as in Vim
 # bind-key -t vi-copy v begin-selection
