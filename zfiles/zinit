@@ -1,0 +1,27 @@
+### Added by Zinit's installer
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
+
+zinit light zdharma/fast-syntax-highlighting
+# zinit light zdharma/history-search-multi-word
+
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
+
+zinit light zsh-users/zsh-completions
+
+# Can't detect that has executable from Vim because of wrapped by function 
+# export NVM_LAZY_LOAD=true
+# zinit light lukechilds/zsh-nvm
+
+# Scripts that are built at install (there's single default make target, "install",
+# and it constructs scripts by `cat'ing a few files). The make'' ice could also be:
+# `make"install PREFIX=$ZPFX"`, if "install" wouldn't be the only, default target.
+# zinit ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+# zinit light tj/git-extras
+
+# Handle completions without loading any plugin, see "clist" command.
+# This one is to be ran just once, in interactive session.
+# zinit creinstall %HOME/my_completions

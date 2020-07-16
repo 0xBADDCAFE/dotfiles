@@ -193,4 +193,4 @@ my_remove_last_history_entry() {
 }
 
 # Load plugins
-source ${0:a:h}/zplugin
+source ${0:a:h}/zinit
