@@ -6,7 +6,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc
 
 SRCDIR=${0:a:h}
 
-ln -s ${SRCDIR}/.zprezto ${ZDOTDIR:-$HOME}/.zprezto
 for rcfile in "${SRCDIR}"/zfiles/z*(.N); do
   <<RCFILE > "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 source ${rcfile}
