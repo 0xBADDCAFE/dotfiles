@@ -291,7 +291,6 @@ endif
 
 " Settings that require the plugin to be loaded first
 " colorschemes{{{
-autocmd vimrc_loading VimEnter,ColorScheme * highlight CursorLine NONE
 " TODO: separate settings by g:colors_name value.
 if has('gui_running')
   if !empty(globpath(&rtp, 'colors/lucius.vim'))

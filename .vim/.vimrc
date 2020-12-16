@@ -42,7 +42,8 @@ set backup
 set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
 set completeopt=menu,longest
-set nocursorline
+set cursorline
+set cursorlineopt=number
 set diffopt=filler,iwhite,horizontal
 set display=lastline
 set expandtab
