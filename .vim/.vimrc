@@ -338,6 +338,6 @@ command! W setl wrap! wrap?
 
 
 " plugin setting file
-" source ~/.vim/.vimrc.bundle
+source ~/.vim/.vimrc.bundle
 
 " vim: ft=vim:et:sw=2:sts=2:fdm=marker :

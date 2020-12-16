@@ -1,11 +1,153 @@
+if &compatible
+  set nocompatible
+endif
+
+packadd minpac
+
+call minpac#init()
+
+" minpac must have {'type': 'opt'} so that it can be loaded with `packadd`.
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" Add other plugins here.
+call minpac#add('0xBADDCAFE/midnight.vim')
+call minpac#add('Donearm/Ubaryd')
+call minpac#add('ap/vim-css-color')
+call minpac#add('arnaud-lb/vim-php-namespace')
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('dense-analysis/ale')
+call minpac#add('dhruvasagar/vim-table-mode')
+call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('glidenote/memolist.vim')
+call minpac#add('haya14busa/vim-asterisk')
+call minpac#add('haya14busa/vim-auto-programming')
+call minpac#add('itchyny/vim-parenmatch')
+call minpac#add('jonathanfilip/vim-lucius')
+call minpac#add('justinmk/vim-dirvish')
+call minpac#add('kana/vim-better-tag-jump')
+call minpac#add('kana/vim-operator-user')
+call minpac#add('kana/vim-tabpagecd')
+call minpac#add('kana/vim-textobj-user')
+call minpac#add('koron/codic-vim')
+call minpac#add('koron/nyancat-vim')
+call minpac#add('lucapette/vim-textobj-underscore')
+call minpac#add('mattn/emmet-vim')
+call minpac#add('mattn/sonictemplate-vim')
+call minpac#add('mattn/vim-ale-icons')
+call minpac#add('mattn/vim-goimports')
+call minpac#add('mattn/vim-lexiv')
+call minpac#add('mattn/vim-lsp-icons')
+call minpac#add('mattn/vim-lsp-settings')
+call minpac#add('mattn/vim-prompter')
+call minpac#add('mattn/webapi-vim')
+call minpac#add('osyo-manga/vim-anzu')
+call minpac#add('osyo-manga/vim-textobj-multiblock')
+call minpac#add('prabirshrestha/async.vim')
+call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
+call minpac#add('prabirshrestha/asyncomplete.vim')
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('rickhowe/diffchar.vim')
+call minpac#add('ryym/operator-camelize.vim')
+call minpac#add('tacahiroy/ctrlp-funky')
+call minpac#add('thinca/vim-qfreplace')
+call minpac#add('thinca/vim-quickrun')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tyru/caw.vim')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('vim-jp/syntax-vim-ex')
+call minpac#add('w0ng/vim-hybrid')
+call minpac#add('whatyouhide/vim-gotham')
+
+" Load the plugins in pack/minpac/start directory right now.
+packloadall
+
 " plugin_setting_template {{{
-" let g:variable = 0
+" if !empty(globpath(&rtp, 'autoload/ale.vim'))
+"   let g:variable = 0
+" endif
 " }}}
 
 " standard plugins {{{
 if !exists('loaded_matchit')
   " enable matchit
   runtime macros/matchit.vim
+endif
+" }}}
+" ale {{{
+if !empty(globpath(&rtp, 'autoload/ale.vim'))
+  let g:ale_linters = {
+        \   'go': ['gopls', 'gofmt'],
+        \   'java': [],
+        \   'kotlin': [],
+        \}
+  let g:ale_fixers = {
+        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \   'javascript': ['prettier'],
+        \   'typescript': ['prettier'],
+        \   'javascriptreact': ['prettier'],
+        \   'typescriptreact': ['prettier'],
+        \   'css': ['prettier'],
+        \   'php': ['prettier'],
+        \}
+  " let g:ale_fixers['javascript'] = ['prettier-eslint']
+  " let g:ale_fixers['typescript'] = ['tslint']
+
+  let g:ale_lint_on_text_changed = 'normal'
+  let g:ale_fix_on_save = 0
+  nmap <Space>l <Plug>(ale_fix)
+
+  let g:ale_pattern_options = {
+        \   '.*\.json$': {'ale_enabled': 0},
+        \   '.*node_modules/.*': {'ale_enabled': 0},
+        \}
+
+  let g:ale_javascript_prettier_use_local_config = 1
+  let g:ale_completion_tsserver_autoimport = 1
+  " let g:ale_php_phpcbf_standard = 'PSR1,PSR2'
+endif
+" }}}
+" vim-anzu {{{
+if !empty(globpath(&rtp, 'autoload/anzu.vim'))
+  nmap * <Plug>(asterisk-z*)<Plug>(anzu-n)
+  nmap # <Plug>(asterisk-z#)<Plug>(anzu-n)
+  vmap * <Plug>(asterisk-z*)<Plug>(anzu-n)
+  vmap # <Plug>(asterisk-z#)<Plug>(anzu-n)
+
+  let g:anzu_status_format = "(%i/%l) %w"
+
+  augroup AnzuLoading
+    autocmd!
+    autocmd BufLeave * AnzuClearSearchStatus
+  augroup END
+endif
+" }}}
+" asyncomplete {{{
+if !empty(globpath(&rtp, 'autoload/asyncomplete.vim'))
+  " let g:asyncomplete_auto_completeopt = 0
+  imap <nul> <c-space>
+  imap <c-space> <Plug>(asyncomplete_force_refresh)
+endif
+" }}}
+" vim-lsp {{{
+if !empty(globpath(&rtp, 'autoload/lsp.vim'))
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=number
+    " nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    nmap <buffer> K <plug>(lsp-hover)
+    " refer to doc to add more commands
+  endfunction
+
+  augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
+
+  let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+  " let g:lsp_diagnostics_echo_cursor = 0
 endif
 " }}}
 " vim-parenmatch {{{
