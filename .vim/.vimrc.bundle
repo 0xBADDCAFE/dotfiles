@@ -14,6 +14,7 @@ function! PackInit() abort
   call minpac#add('0xBADDCAFE/midnight.vim')
   call minpac#add('Donearm/Ubaryd')
   call minpac#add('ap/vim-css-color')
+  call minpac#add('arcticicestudio/nord-vim')
   call minpac#add('arnaud-lb/vim-php-namespace')
   call minpac#add('ctrlpvim/ctrlp.vim')
   call minpac#add('dense-analysis/ale')
@@ -22,6 +23,8 @@ function! PackInit() abort
   call minpac#add('glidenote/memolist.vim')
   call minpac#add('haya14busa/vim-asterisk')
   call minpac#add('haya14busa/vim-auto-programming')
+  call minpac#add('hrsh7th/vim-vsnip')
+  call minpac#add('hrsh7th/vim-vsnip-integ')
   call minpac#add('itchyny/vim-parenmatch')
   call minpac#add('jonathanfilip/vim-lucius')
   call minpac#add('justinmk/vim-dirvish')
@@ -32,11 +35,12 @@ function! PackInit() abort
   call minpac#add('koron/codic-vim')
   call minpac#add('koron/nyancat-vim')
   call minpac#add('lucapette/vim-textobj-underscore')
+  call minpac#add('mattn/ctrlp-matchfuzzy')
   call minpac#add('mattn/emmet-vim')
   call minpac#add('mattn/sonictemplate-vim')
   call minpac#add('mattn/vim-ale-icons')
   call minpac#add('mattn/vim-goimports')
-  call minpac#add('mattn/vim-lexiv')
+  " call minpac#add('mattn/vim-lexiv')
   call minpac#add('mattn/vim-lsp-icons')
   call minpac#add('mattn/vim-lsp-settings')
   call minpac#add('mattn/vim-prompter')
@@ -155,7 +159,25 @@ if !empty(globpath(&rtp, 'autoload/lsp.vim'))
 
   let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
   " let g:lsp_diagnostics_echo_cursor = 0
+  " let g:lsp_highlight_references_enabled = 0
 endif
+" }}}
+" vim-lsp-settings {{{
+" let g:lsp_settings = {}
+" let g:lsp_settings['gopls'] = {
+"     \  'workspace_config': {
+"     \    'usePlaceholders': v:true,
+"     \    'analyses': {
+"     \      'fillstruct': v:true,
+"     \    },
+"     \  },
+"     \  'initialization_options': {
+"     \    'usePlaceholders': v:true,
+"     \    'analyses': {
+"     \      'fillstruct': v:true,
+"     \    },
+"     \  },
+"     \}
 " }}}
 " vim-parenmatch {{{
 if !empty(globpath(&rtp, 'autoload/parenmatch.vim'))
@@ -191,6 +213,11 @@ if !empty(globpath(&rtp, 'autoload/ctrlp.vim'))
   " funky{{{
   nnoremap <F11> :CtrlPFunky<CR>
   let g:ctrlp_funky_syntax_highlight = 1
+  " }}}
+  " ctrlp-matchfuzzy {{{
+  if !empty(globpath(&rtp, 'autoload/ctrlp_matchfuzzy.vim'))
+    let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+  endif
   " }}}
 endif
 " }}}
@@ -316,7 +343,7 @@ else
       autocmd vimrc_loading ColorScheme gotham highlight TablineFill guibg=#195466
 
       colorscheme gotham
-    elseif
+    else
       autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal ctermbg=NONE
       autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE
       autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel ctermbg=NONE
