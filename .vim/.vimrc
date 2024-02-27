@@ -337,6 +337,31 @@ augroup END
 " command! BDelete b#|bd#
 " command! BWipeout enew|bw#
 command! W setl wrap! wrap?
+
+function! s:CheckAndCreateDir()
+    " 現在のファイルパスを取得
+    let l:file_path = expand('%:p')
+
+    " ファイルのディレクトリパスを取得
+    let l:dir_path = fnamemodify(l:file_path, ':h')
+
+    " ディレクトリが存在しない場合は確認して作成する
+    if !isdirectory(l:dir_path)
+        let l:choice = confirm('ディレクトリが存在しません。作成しますか？', "&yes\n&no", 1)
+        if l:choice == 1
+            call mkdir(l:dir_path, 'p')
+            echo 'ディレクトリを作成しました: ' . l:dir_path
+        else
+            echo '保存がキャンセルされました。'
+            return 0
+        endif
+    endif
+    return 1
+endfunction
+
+" 保存時にディレクトリが存在しない場合の処理をフック
+autocmd BufWritePre * call s:CheckAndCreateDir()
+
 " }}}
 
 
