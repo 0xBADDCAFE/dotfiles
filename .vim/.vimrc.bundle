@@ -17,7 +17,7 @@ function! PackInit() abort
   call minpac#add('arcticicestudio/nord-vim')
   call minpac#add('arnaud-lb/vim-php-namespace')
   call minpac#add('ctrlpvim/ctrlp.vim')
-  call minpac#add('dense-analysis/ale')
+  " call minpac#add('dense-analysis/ale')
   call minpac#add('dhruvasagar/vim-table-mode')
   call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('glidenote/memolist.vim')
@@ -149,6 +149,12 @@ if !empty(globpath(&rtp, 'autoload/lsp.vim'))
     nmap <buffer> <f2> <plug>(lsp-rename)
     nmap <buffer> K <plug>(lsp-hover)
     " refer to doc to add more commands
+
+    " Use efm-languageserver for formatting
+    if index(["python"], &ft) != -1
+      " nmap <buffer> <space>l :<C-u>LspDocumentFormatSync<CR>
+      nmap <buffer> <space>l :<C-u>LspDocumentFormatSync --server=efm-langserver<CR>
+    endif
   endfunction
 
   augroup lsp_install
@@ -157,12 +163,16 @@ if !empty(globpath(&rtp, 'autoload/lsp.vim'))
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
   augroup END
 
-  let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+  " let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
   " let g:lsp_diagnostics_echo_cursor = 0
   " let g:lsp_highlight_references_enabled = 0
+  let g:lsp_diagnostics_virtual_text_enabled = 0
+  let g:lsp_diagnostics_echo_cursor = 1
+  " let g:lsp_diagnostics_float_cursor = 1
 endif
 " }}}
 " vim-lsp-settings {{{
+" Should use :LspSettingsGlobalEdit
 " let g:lsp_settings = {}
 " let g:lsp_settings['gopls'] = {
 "     \  'workspace_config': {
@@ -182,6 +192,11 @@ endif
 " vim-parenmatch {{{
 if !empty(globpath(&rtp, 'autoload/parenmatch.vim'))
   let g:loaded_matchparen = 1
+endif
+" }}}
+" vim-vsnip {{{
+if !empty(globpath(&rtp, 'autoload/vsnip.vim'))
+  let g:vsnip_snippet_dir = expand('~/.vim/vsnip')
 endif
 " }}}
 " ctrlp{{{
