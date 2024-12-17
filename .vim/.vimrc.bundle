@@ -204,6 +204,12 @@ if !empty(globpath(&rtp, 'autoload/vsnip.vim'))
   let g:vsnip_snippet_dir = expand('~/.vim/vsnip')
 endif
 " }}}
+" vim-goimports {{{
+if !empty(globpath(&rtp, 'autoload/goimports.vim'))
+  let g:goimports_simplify = 1
+  " autocmd vimrc_loading FileType go nnoremap <buffer> <silent> <Space>l :<C-u>GoImportRun<CR>
+endif
+" }}}
 " ctrlp{{{
 if !empty(globpath(&rtp, 'autoload/ctrlp.vim'))
   let g:ctrlp_cmd = 'CtrlPMRUFiles'
