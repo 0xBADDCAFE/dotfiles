@@ -150,6 +150,9 @@ if !empty(globpath(&rtp, 'autoload/lsp.vim'))
     nmap <buffer> K <plug>(lsp-hover)
     " refer to doc to add more commands
 
+    nnoremap <buffer> <expr> <c-n> lsp#scroll(+4)
+    " nnoremap <buffer> <expr> <c-p> lsp#scroll(-4) 
+
     " Use efm-languageserver for formatting
     if index(["python"], &ft) != -1
       " nmap <buffer> <space>l :<C-u>LspDocumentFormatSync<CR>
