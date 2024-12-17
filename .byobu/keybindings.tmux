@@ -16,6 +16,7 @@ unbind -n C-t
 set -g prefix ^T
 set -g prefix2 ^T
 bind t send-prefix
+bind c new-window
 bind % split-window -h -c "#{pane_current_path}" \; display-panes
 bind | split-window -v -c "#{pane_current_path}" \; display-panes
 
