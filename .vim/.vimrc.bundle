@@ -154,9 +154,9 @@ if !empty(globpath(&rtp, 'autoload/lsp.vim'))
     " nnoremap <buffer> <expr> <c-p> lsp#scroll(-4) 
 
     " Use efm-languageserver for formatting
-    if index(["python"], &ft) != -1
+    if index(["python", "sql"], &ft) != -1
       " nmap <buffer> <space>l :<C-u>LspDocumentFormatSync<CR>
-      nmap <buffer> <space>l :<C-u>LspDocumentFormatSync --server=efm-langserver<CR>
+      nnoremap <buffer> <space>l :<C-u>LspDocumentFormatSync --server=efm-langserver<CR>
     endif
   endfunction
 
