@@ -15,7 +15,10 @@ zinit light denysdovhan/spaceship-prompt
 zinit light zsh-users/zsh-completions
 
 # Can't detect that has executable from Vim because of wrapped by function 
+# export NVM_COMPLETION=true
 # export NVM_LAZY_LOAD=true
+# export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim' 'code')
+# export NVM_AUTO_USE=true
 # zinit light lukechilds/zsh-nvm
 
 # Scripts that are built at install (there's single default make target, "install",
