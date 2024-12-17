@@ -194,5 +194,3 @@ my_remove_last_history_entry() {
 
 # Load plugins
 source ${0:a:h}/zinit
-
-export SPACESHIP_PROMPT_ADD_NEWLINE=false
