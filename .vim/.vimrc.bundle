@@ -157,6 +157,8 @@ if !empty(globpath(&rtp, 'autoload/lsp.vim'))
     if index(["python", "sql"], &ft) != -1
       " nmap <buffer> <space>l :<C-u>LspDocumentFormatSync<CR>
       nnoremap <buffer> <space>l :<C-u>LspDocumentFormatSync --server=efm-langserver<CR>
+    else
+      nnoremap <buffer> <space>l :<C-u>LspDocumentFormatSync<CR>
     endif
   endfunction
 
