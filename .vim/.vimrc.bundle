@@ -45,6 +45,7 @@ function! PackInit() abort
   call minpac#add('mattn/vim-lsp-settings')
   call minpac#add('mattn/vim-prompter')
   call minpac#add('mattn/webapi-vim')
+  call minpac#add('morhetz/gruvbox')
   call minpac#add('osyo-manga/vim-anzu')
   call minpac#add('osyo-manga/vim-textobj-multiblock')
   call minpac#add('prabirshrestha/async.vim')
@@ -361,31 +362,31 @@ if has('gui_running')
     colorscheme lucius
   endif
 else
-  if !empty(globpath(&rtp, 'colors/gotham.vim'))
-    if exists('+termguicolors')
-      autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal guibg=NONE
-      autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText guibg=NONE
-      autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel guibg=NONE
+  autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+  autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE guibg=NONE
 
-      autocmd vimrc_loading VimEnter * highlight Tabline guibg=#195466
-      autocmd vimrc_loading VimEnter * highlight TablineFill guibg=#195466
-      autocmd vimrc_loading ColorScheme gotham highlight Tabline guibg=#195466
-      autocmd vimrc_loading ColorScheme gotham highlight TablineFill guibg=#195466
-
-      colorscheme gotham
-    else
-      autocmd vimrc_loading VimEnter,ColorScheme * highlight Normal ctermbg=NONE
-      autocmd vimrc_loading VimEnter,ColorScheme * highlight NonText ctermbg=NONE
-      autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel ctermbg=NONE
-
-      autocmd vimrc_loading VimEnter * highlight Tabline ctermbg=24
-      autocmd vimrc_loading VimEnter * highlight TablineFill ctermbg=24
-      autocmd vimrc_loading ColorScheme gotham256 highlight Tabline ctermbg=24
-      autocmd vimrc_loading ColorScheme gotham256 highlight TablineFill ctermbg=24
-
-      colorscheme gotham256
-    endif
+  if !empty(globpath(&rtp, 'colors/gruvbox.vim'))
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight! link NonText GruvboxBg2
+    autocmd vimrc_loading VimEnter,ColorScheme * highlight LineNr ctermbg=237 guibg=#3c3836
+    colorscheme gruvbox
   endif
+
+  " if !empty(globpath(&rtp, 'colors/gotham.vim'))
+  "   autocmd vimrc_loading VimEnter,ColorScheme * highlight TablineSel ctermbg=NONE guibg=NONE
+  "   if exists('+termguicolors')
+  "     autocmd vimrc_loading VimEnter * highlight Tabline guibg=#195466
+  "     autocmd vimrc_loading VimEnter * highlight TablineFill guibg=#195466
+  "     autocmd vimrc_loading ColorScheme gotham highlight Tabline guibg=#195466
+  "     autocmd vimrc_loading ColorScheme gotham highlight TablineFill guibg=#195466
+  "     colorscheme gotham
+  "   else
+  "     autocmd vimrc_loading VimEnter * highlight Tabline ctermbg=24
+  "     autocmd vimrc_loading VimEnter * highlight TablineFill ctermbg=24
+  "     autocmd vimrc_loading ColorScheme gotham256 highlight Tabline ctermbg=24
+  "     autocmd vimrc_loading ColorScheme gotham256 highlight TablineFill ctermbg=24
+  "     colorscheme gotham256
+  "   endif
+  " endif
 endif
 " }}}
 
